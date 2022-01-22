@@ -1,0 +1,959 @@
+body{
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+}
+@media screen and (min-width:769px){
+    body{
+        overflow: hidden;
+    }
+}
+
+
+// 客製挑選
+#scrCustom{
+    display: block;
+    position: absolute;
+    top:0;
+    z-index: 2;
+    width: 100%;
+    background-image: url("../images/backGroundPaperDoor.png");
+    //mobile切換按鈕
+    .switchBar{
+        width: 50%;
+        margin: 0 auto 20px;
+        display: flex;
+        background-color: rgb(182, 138, 138);
+        // border-radius: 10px;
+        span{
+            width: 50%;
+            color: rgb(139, 69, 69);
+            text-align: center;
+            padding: 6px 2px;
+        }
+        .scr_now{
+            color: #fff;
+            background-color: #582b07;
+        }
+    }    
+    //挑選藥材中間容器
+    #customWrapper{
+        width: 100%;
+        max-width: 480px;
+        background-image: url("../images/backGround.jpg");
+        height: 100%;
+        margin: auto;
+        padding: 80px 6px 60px;
+        //目前選取資訊容器
+        #items_info_wrapper{
+            border: 2px solid #888;
+            display: block;
+            background-color: #fff;
+            border-radius: 30px;
+            box-sizing: border-box;
+            width: 95%;
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            #radar_title{
+                font-size: 18px;
+                text-align: center;
+                margin: auto;
+            }
+            #radar_wrapper{
+                margin: auto;
+                width: 300px;
+                height: 280px;
+            }
+            #total_price, #total_amount{
+                color: #a33131;
+            }
+        }
+        //桌機按鈕
+        #btn_wrapper_forflex{
+            display: none;
+        }
+        //藥材選單
+        #items_input{
+            padding: 6px;
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+            input{
+                display: none;
+            }
+            input:checked+label .item_price_span{
+                opacity: 1;
+                left: 10px;
+            }
+            input:hover+label .item_price_span{
+                opacity: 1;
+                left: 10px;
+            }
+            h3{
+                font-family: 'Noto Sans TC', sans-serif;
+                font-size: 18px;
+                margin: 20px 0 10px;
+            }
+            .items_normal, .items_time{
+                display: flex;
+                flex-wrap: wrap;
+                width: 80%;
+                margin: auto;
+                label{
+                    width: 33.3333%;
+                    padding: 10px;
+                    display: block;
+                    position: relative;
+                    img{
+                        width: 100%;
+                        border-radius: 50%;
+                        transition: .5s;
+                        box-shadow: -2px 2px 4px 1px rgba(30,30,30,.3);
+                        min-width: 50px;
+                    }
+                    p{
+                        line-height: 1;
+                        text-align: center;
+                    }
+                    .item_price_span{
+                        width: 30%;
+                        min-width: 48px;
+                        position: absolute;
+                        top: 10px;
+                        left: -20px;
+                        display: block;
+                        margin:auto;
+                        text-align: center;
+                        color: #eee;
+                        background-color: rgba(66,66,66,0.6);
+                        transition: .5s;
+                        padding: 0 2px;
+                        opacity: 0;
+                    }
+                    .item_time_tag{
+                        position: absolute;
+                        top: 7%;
+                        right: 7%;
+                        background-color: #fff;
+                        border: 2px solid;
+                        border-radius: 50%;
+                        line-height: 1;
+                        padding: 4px;
+                        font-size: 15px;
+                    }
+                    .time_1{
+                        border-color: rgba(178,79,89,1);
+                    }
+                    .time_2{
+                        border-color: rgba(221,125,29,1);
+                    }
+                    .time_3{
+                        border-color: rgba(106,145,45,1);
+                    }
+                }
+            }
+            .items_normal{
+                label{
+                    width: 100%;
+                }
+                p{
+                    margin-top: 4px;
+                }
+                .slick-dots{
+                    bottom: -15px;
+                }
+            }
+            input:checked + label img{
+                box-shadow: 0 0 8px 7px #fff;
+                transition: .5s;
+            }
+        }
+    }
+    #bottomWave{
+        display: none;
+    }
+}
+
+#btnSubmitItems_formobile{
+    display: block;
+    margin: 40px auto 0px;
+    font-size: 15px;
+    text-align: center;
+    padding: 10px 14px;
+    width: 100px;
+    border-radius: 30px;
+    background-color: #582b07;
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+}
+
+// 桌機打開百科按鈕
+#btnShowWiki{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: -70px;
+    top: calc(50vh - 70px);
+    z-index: 2;
+    width: 140px;
+    height: 140px;
+    border: none;
+    border-radius: 50%;
+    background-color: #582b07;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    #btnSpace{
+        width: 35%;
+    }
+    #btnRightTri{
+        position: relative;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 14px 0 14px 12px;
+        border-color: transparent transparent transparent #ffffff;
+    }
+    span{
+        font-size: 18px;
+        margin: 0 15px;
+        writing-mode: vertical-lr;
+    }
+}
+#btnShowWiki:hover #btnRightTri{    
+    animation: tri_right 0.5s infinite;
+}
+
+#btnCloseWiki:hover #btnLeftTri{    
+    animation: tri_left 0.5s infinite;
+}
+
+@keyframes tri_right{
+      0%{left:0px}
+    100%{left:6px}
+}
+
+@keyframes tri_left{
+    0%{right:0px}
+  100%{right:6px}
+}
+
+// 百科
+#scrWiki{
+    // display: none;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background-image: url("../images/backGroundPaperDoor.png");
+    #btnCloseWiki{
+        display: none;
+    }
+    #wikiWrapper{
+        width: 100%;
+        max-width: 480px;
+        margin: auto;
+        background-image: url(../images/backGround.jpg);
+        padding: 80px 6px 60px;
+    }
+    .switchBar{
+        width: 50%;
+        margin: 0 auto 20px;
+        display: flex;
+        background-color: rgb(182, 138, 138);
+        // border-radius: 10px;
+        span{
+            width: 50%;
+            color: rgb(139, 69, 69);
+            text-align: center;
+            padding: 6px 2px;
+        }
+        .scr_now{
+            background-color: #582b07;
+            color: #fff;
+        }
+    }
+    #wikiInfo{
+        margin: 20px auto;
+        padding: 0 20px;
+        div{
+            display: flex;
+            margin: auto;
+            h3{
+                font-family: 'Noto Sans TC', sans-serif;
+                text-align: center;
+            }
+            p{
+                margin: 16px auto;
+                font-weight: normal;
+                text-align: left;
+            }
+            img{
+                display: block;
+                margin: auto;
+                width: 60%;
+                max-height: 300px;
+                filter: drop-shadow(0px 0px 3px #333);
+            }
+        }
+    }
+    #wikiNav{
+        width: 90%;
+        margin: 20px auto;
+        div{
+            text-align: center;
+            img{
+                display: inline-block;
+                margin: auto;
+                width: 85%;
+            }
+            span{
+                display: block;
+            }
+            .forActive{
+                display: none;
+            }
+        }
+        .slick-list .draggable{
+            overflow: hidden;
+        }
+        li{
+            margin: 0;
+        }
+        .slick-slide{
+            opacity: .3;
+        }
+        .slick-current{
+            opacity: 1;
+        }
+    }
+}
+
+// 湯牌燈箱
+#scrCardLightbox{
+    display: none;
+    width: 100%;
+    background-color: rgba(66, 66, 66, 0.6);
+    position: relative;
+    z-index: 105;
+    padding: 40px 10px;
+    #lightboxContent{
+        border-radius: 10px;
+        background-image: url(../images/backGround.jpg);
+        margin: auto;
+        padding: 16px 6px;
+        width: 95%;
+        position: relative;
+        #lightboxToggle{
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: -18.5px;
+            right: -18.5px;
+            border-radius: 50%;
+            background-color: #e19d43;
+            border: 3px solid #fee;
+        }
+        #lightboxToggle::before{
+            content: '';
+            display: block;
+            width: 30px;
+            height: 6px;
+            border-radius: 6px;
+            background-color: #864d04;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 15px;
+            left: 2px;
+        }
+        #lightboxToggle::after{
+            content: '';
+            display: block;
+            width: 30px;
+            height: 6px;
+            border-radius: 6px;
+            background-color: #864d04;
+            transform: rotate(-45deg);
+            position: absolute;
+            top: 15px;
+            left: 2px;
+        }
+        h3{
+            text-align: center;
+        }
+        #dashboard{
+            // background-image: url(../images/makingCardBackground.png);
+            #options{
+                margin: 10px auto 16px;
+                display: flex;
+                justify-content: space-around;
+                position: relative;
+                z-index: 999;
+                .inputSet{
+                    .cardInputWrapper{
+                        display: none;
+                        position: absolute;
+                        border-radius: 10px;
+                        width: 90%;
+                        top: 50px;
+                        left:0;
+                        right:0;
+                        margin: auto;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: rgb(255, 149, 50);
+                        padding: 20px 10px;
+
+                        input[type*="text"]{
+                            width: 80%;
+                            padding: 4px;
+                            font-size: 16px;
+                            border: 0 none transparent;
+                        }
+                        select{
+                            width: 80%;
+                            padding: 3px 4px;
+                            font-size: 16px;
+                            border: 0 none transparent;
+                        }
+                    }
+                }
+                .option{
+                    color: #fff;
+                    font-weight: 300;
+                    padding: 4px;
+                    background-color: #444;
+                    position: relative;
+                    span{
+                        display: none;
+                        position: absolute;
+                        top: 35px;
+                        left: 19px;
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 0 16px 30px 16px;
+                        border-color: transparent transparent rgb(255, 149, 50) transparent;
+                    }
+                }
+                .colorInputSet{
+                    // colour的input們
+                    .cardInputWrapper{
+                        display: none;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        text-align: center;
+                        .colourpicker{
+                            width: 30%;
+                            margin: 6px auto;
+                        }
+                        input[type="colour"]{
+                            width: 100%;
+                        }
+                        input[title="Alpha"]{
+                            display: none;
+                        }
+                        // 下拉按鈕
+                        .colourpicker_swatch{
+                            padding: 0;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        .card{
+            position: relative;
+            margin: 80px auto 0;
+            z-index: 998;
+            .card_name{
+                font-size: 18px;
+            }
+            .draw{
+                margin: auto;
+                width: 200px;
+                height: 200px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .drawingArea{
+                    transform: scale(.55);
+                    width: 0;
+                    height: 0; 
+                    position: relative;
+                    text-align: center;
+                    vertical-align: baseline;
+                }
+                .circle1, .circle2, .circle3, .circle4, .circle5, .circle0{
+                    position: relative;
+                    /* letter-spacing: 0.1em; */
+                }                
+                .circle p{
+                    font-weight: bold;
+                    position: absolute;
+                    display: block;
+                    width: 25px;
+                    margin: 0;
+                    font-size: 60px;
+                    font-family: 'Times New Roman';
+                    vertical-align: top;
+                }
+            }
+            .card_item{
+                display: none;
+            }
+        }
+        #btnSubmitCard{
+            display: block;
+            margin: 25px auto 5px;
+            font-size: 15px;
+            text-align: center;
+            padding: 10px 14px;
+            width: 100px;
+            border-radius: 30px;
+            background-color: #582b07;
+            color: rgb(216, 172, 52);
+            position: relative;
+            cursor: pointer;
+            transition: .3s;
+        }
+        #btnSubmitCard:hover{
+            color: #fff;
+            transition: .3s;
+        }
+    }
+}
+
+#mrSpringStand{
+    display: none;
+}
+
+// 完成燈箱
+#scrSubmitLightbox{
+    display: none;
+    width: 100%;
+    background-color: rgba(66, 66, 66, 0.6);
+    position: relative;
+    z-index: 6;
+    padding: 20vh 10px;
+    #submitLightboxContent{
+        background-image: url(../images/makingCardBackground2.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        border-radius: 20px;
+        margin: auto;
+        padding: 36px 6px;
+        width: 90%;
+        position: relative;
+        text-align: center;
+        h3{
+            margin: 0 auto 30px;
+            font-family: 'Noto Sans TC', sans-serif;
+            text-align: center;
+        }
+        .far{
+            display: none;
+        }
+        .lightboxLinks{
+            display: block;
+            margin: 5px auto 10px;
+            font-size: 15px;
+            text-align: center;
+            padding: 10px 14px;
+            width: 100px;
+            border-radius: 30px;
+            background-color: #582b07;
+            color: #fff;
+            position: relative;
+            cursor: pointer;
+
+        }
+    }
+}
+
+@media screen and (min-width:769px){
+    #scrCustom{
+        height: 100vh;
+        position: relative;
+        #customWrapper{
+            padding: 100px 30px;
+            width: 80%;
+            max-width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            height: 100%;
+            z-index: 3;
+            #items_input{
+                order: 0;
+                width: 35%;
+                margin: 0;
+                padding: 0;
+                z-index: 2;
+                .items_normal div{
+                    width: 33.3333%;
+                }
+                h3{
+                    margin: 0;
+                    font-size: 20px;
+                    margin-bottom: 12px;
+                }
+                .items_time{
+                    margin-bottom:20px;
+                }
+                label:hover img{
+                    box-shadow: 0 0 8px 7px #fff;
+                    transition: .5s;
+                    cursor: pointer; 
+                }
+            }
+            #items_info_wrapper_forflex{
+                order: 1;
+                width: 30%;
+                min-width: 400px;
+                padding: 0px;
+                z-index: 2;
+                #items_info_wrapper{
+                    margin: auto;
+                }
+                #btn_wrapper_forflex{
+                    display: block;
+                    order: 2;
+                    margin: auto;
+                    display: flex;                    
+                    //選取完成按鈕
+                    #btnSubmitItems{
+                        margin: 40px auto 0px;
+                        font-size: 15px;
+                        text-align: center;
+                        padding: 10px 54px;
+                        border-radius: 100px;
+                        background-color: #582b07;
+                        color: rgb(216, 172, 52);
+                        position: relative;
+                        cursor: pointer;
+                        transition: .3s;
+                    }
+                    #btnSubmitItems:hover{
+                        color:#fff;
+                        transition: .3s;
+                    }
+                }
+            }
+        }
+        .switchBar{
+            display: none;
+        }
+        #bottomWave{
+            display: block;
+            position: absolute;
+            bottom: 58px;
+            height: 0px;
+            width: 100vw;
+            z-index: 1;
+            transition: .5s;
+            opacity: 0;
+            #mrSpringBath{
+                position: absolute;
+                // width: 20%;
+                left: 0;
+                right: 0;
+                margin: auto;
+                animation: mrSpringBathSink infinite 2s alternate;
+                transition-delay: 2s;
+            }
+            @keyframes mrSpringBathSink {
+                0%{ top: -120px}
+                100%{ top: -140px}
+            }
+        }        
+        #mrSpringStand{
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 50px;
+            width: 30%;
+            max-width: 400px;
+            margin: auto;
+            opacity: 1;
+            transition: .5s;
+            animation: mrSpringRotation .5s alternate infinite linear;
+            @keyframes mrSpringRotation {
+                0%{transform: rotate(1deg)}
+                100%{transform: rotate(-1deg)}
+            }
+        }
+        .all_rights{
+            position: absolute;
+            bottom: 0;
+            z-index: 2;
+        }
+    }
+    #btnShowWiki{
+        display: flex;
+    }
+    #scrWiki{
+        position: absolute;
+        top: 0;
+        left: -100vw;
+        transition: 1s;
+        z-index: 202;
+        height: 100vh;
+        background-image: none;
+        display: flex;
+        #btnCloseWiki{
+            display: flex;
+            flex-direction: row-reverse;
+            position: absolute;
+            left: calc(50vw - 360px - 70px);
+            top: 0;
+            bottom: 0;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: calc(50vh - 70px);
+            width: 140px;
+            height: 140px;
+            border: none;
+            border-radius: 50%;
+            background-color: #582b07;
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            #btnLeftTri{
+                position: relative;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 14px 12px 14px 0;
+                border-color: transparent #ffffff transparent transparent ;
+            }
+            span{
+                font-size: 18px;
+                margin: 0 15px;
+                writing-mode: vertical-lr;
+            }
+            #btnSpace2{
+                width: 35%;
+            }
+        }
+        .all_rights{
+            display: none;
+        }
+        #wikiWrapper{
+            width: 720px;
+            max-width: none;
+            height: 720px;
+            padding: 0;
+            // display: flex;      
+            .switchBar{
+                display: none;
+            }
+            #wikiInfo{
+                .CirItem{
+                    display: block;
+                }
+            }
+            #wikiNav{
+                width: 100%;
+                margin: 0;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    #scrCardLightbox{
+        position: fixed;
+        display: none;
+        top: 0;
+        left: 0;
+        z-index: 103;
+        height: 100vh;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+        #lightboxContent{
+            max-width: 960px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            h3{
+                width: 100%;
+            }
+            #dashboard{
+                width: 60%;
+                margin-left: 3%;
+                display: block;
+                #options{
+                    display: block;
+                    display: flex;
+                    flex-direction: column;
+                    .inputSet{
+                        display: flex;
+                        // width: 100%;
+                        margin: 20px;
+                        .option{
+                            width: 15%;
+                            text-align: center;
+                            height: 32px;
+                            margin: 0;
+                            min-width: 80px;
+                        }
+                        .option span{
+                            display: none;
+                        }
+                        .cardInputWrapper{
+                            position: relative;
+                            top: auto;
+                            display: block;
+                            background-color: transparent;
+                            margin: 0;
+                            padding: 0;
+                            width: 85%;
+                        }
+                    }
+                    .colorInputSet{      
+                        height: 110px;
+                        .cardInputWrapper{
+                            width: 80%;
+                            margin-top: -6px;
+                            text-align: left;
+                            padding: 0;
+                            padding-left: 1%;
+                            .colourpicker{
+                                width: 27%;
+                                margin-bottom: 20px;
+                            }
+                            .colourpicker_input{
+                                height: 32px;
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+            .card{
+                // width: auto;
+                max-width: 224px;
+                text-align: center;
+            }
+            #btnSubmitCardWrapper{
+                width: 100%;
+                margin-top: 30px;
+                #btnSubmitCard{
+                    height: 50px;
+                    margin: auto;
+                    width: 120px;
+                }
+            }
+        }
+    }
+    #btn_wrapper_formobile{
+        display: none;
+    }
+    #scrSubmitLightbox{
+        display: none;
+        position: fixed;
+        z-index: 202;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        #submitLightboxContent{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 30%;
+            min-width: 520px;
+            padding: 40px 20px 60px;
+            h3{
+                width: 100%;
+                margin-bottom: 48px;
+            }
+            .submitLightboxLinkSet{
+                width: 33.333%;
+                text-align: center;
+                .far{
+                    font-size: 60px;
+                    display: inline;
+                }
+                p{
+                    margin-top: 8px;
+                }
+            }
+        }
+    }
+}
+
+// 桌機用燈箱底色
+#mask{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(66, 66, 66, 0.6);
+    top: 0;
+    left: 0;
+    z-index: 201;
+    display: none;
+    transition: 1s;
+}
+
+#alertLightbox{
+    position: fixed;
+    top: calc(50vh - 80px);
+    left: calc(50vw - 150px);
+    width: 300px;
+    height: 160px;
+    z-index: 202;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/makingCardBackground.png);
+    background-size: 100% 100%;
+    #alertLightboxToggle{
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: -18.5px;
+        right: -18.5px;
+        border-radius: 50%;
+        background-color: #e19d43;
+        border: 3px solid #fee;
+    }
+    #alertLightboxToggle:hover{
+        cursor: pointer;
+    }
+    #alertLightboxToggle::before{
+        content: '';
+        display: block;
+        width: 30px;
+        height: 6px;
+        border-radius: 6px;
+        background-color: #864d04;
+        transform: rotate(45deg);
+        position: absolute;
+        top: 15px;
+        left: 2px;
+    }
+    #alertLightboxToggle::after{
+        content: '';
+        display: block;
+        width: 30px;
+        height: 6px;
+        border-radius: 6px;
+        background-color: #864d04;
+        transform: rotate(-45deg);
+        position: absolute;
+        top: 15px;
+        left: 2px;
+    }
+    span{        
+        font-size: 21px;
+    }
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>湯先生 Mr.Spring</title>
+    <script src="node_modules/gsap/src/minified/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/pixi.js/3.0.7/pixi.js"></script>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/share.css">
+    <link rel="stylesheet" href="css/firstPage.css">
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/pixi.js/3.0.7/pixi.js"></script>
+    <style>
+        #mr_spring_for_firstpage {
+            margin-top: 110px;
+        }
+
+        h3 {
+            font-size: 50px;
+        }
+
+        #water_color_change {
+            animation: watergo 5s infinite;
+            transition: 0.5s;
+        }
+
+        @keyframes watergo {
+            0% {
+                transform: scaleY(1);
+            }
+
+            50% {
+                transform: scaleY(1.2);
+            }
+
+            100% {
+                transform: scaleY(1);
+            }
+        }
+
+        #mr_spring_for_firstpage {
+            animation: monkeygo 5s infinite;
+            transition: 0.5s;
+            display: block;
+            margin: auto;
+            top:0;
+            left:0;
+            right:0;
+            bottom: 0;
+            width: 75%;
+        }
+
+        @keyframes monkeygo {
+            0% {
+                top:100px;
+            }
+
+            50% {
+                top:0px;
+            }
+
+            100% {
+                top:100px;
+            }
+        }
+
+        #kasumi_top_container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 5;
+            overflow: hidden;
+            pointer-events: none;
+            /* background-color: #aff; */
+            /* pointer-event: none; */
+        }
+
+        header #kasumi_top_container canvas {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="kasumi_top_container"></div>
+    <div class="mt_first_page">
+        <div class="mt_bg_wrap">
+            <div class="mt_cloud">
+                <div class="cloud_large">
+                    <img src="images/cloud_large.png" alt="cloud">
+                    <img src="images/cloud_large.png" alt="cloud">
+                    <img src="images/cloud_large.png" alt="cloud">
+                </div>
+                <div id="mt_water">
+                    <img id="fj" src="images/fjMountain.png" alt="fujiMountain">
+
+                    <div id="water_color_change"></div>
+                    <div class="wrap" style="position:relative;">
+                        <section class="introduce">
+                            <div class="content">
+                                <div class="herb">
+                                    <figure class="herb_cross">
+                                        <a href="location">
+                                            <h3 class="hurb_name">前端</h3>
+                                        </a>
+                                        <img class="cross" src="images/herbCross01.png" alt="前端">
+                                        <img class="sepia_cross" src="images/herbCross01_red.png" alt="前端">
+                                    </figure>
+
+                                    <figure id="herb_cross2">
+                                        <a href="MrSpringAdminLogin.html">
+                                            <h3 class="hurb_name">後端</h3>
+                                        </a>
+                                        <img class="cross" src="images/herbCross02.png" alt="後端">
+                                        <img class="sepia_cross" src="images/herbCross02_green.png" alt="後端">
+                                    </figure>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="monkey_animation">
+                        <div id="monkey_wrap">
+                            <img id="mr_spring_for_firstpage" src="images/Logo_browen1.svg" alt="湯先生">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <script>
+        
+    function gohome(){
+        window.location.href='home.php';
+    }
+    document.getElementsByClassName('sepia_cross')[0].onclick = gohome;
+
+         
+    function goback(){
+        window.location.href='MrSpringAdminLogin.html';
+    }
+    document.getElementsByClassName('sepia_cross')[1].onclick = goback;
+    </script>
+    <script src="js/kasumi.js"></script>
+</body>
+
+</html>

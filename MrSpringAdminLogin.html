@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>湯先生 - 後端管理系統</title>
+    <link rel="stylesheet" href="css/adminLogin.css">
+</head>
+<body>
+    <div class="loginForm">
+        <img src="./images/mrSpringLogo.svg" alt="湯先生logo">
+        <h3><span>湯</span><span>先</span><span>生</span></h3>
+        <p>後端管理系統</p>
+
+        <label for="acc">帳號<input type="text" name="acc" id="acc"></label>
+        <label for="psw">密碼<input type="password" name="psw" id="psw"></label>
+
+        <button id="loginBtn">登入</button>
+    </div class="loginForm">
+
+</body>
+<script>
+adminAcc = document.getElementById('acc');
+adminPsw = document.getElementById('psw');
+
+loginBtn = document.getElementById('loginBtn');
+loginBtn.addEventListener('click', function(){
+    if ((adminAcc.value == "") || (adminPsw.value == "")) {
+        alert("請輸入帳號密碼");
+    } else {
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function() {
+            console.log(xhr.response);
+            if (xhr.responseText == "error") {
+                alert("登入失敗");
+            } else if (xhr.responseText == "成功登入") {
+                window.location.href = "admin/admin_item.php";
+            }
+        }
+        xhr.open("Get", `backCheckLogin.php?mgrId=${adminAcc.value}&mgrPsw=${adminPsw.value}`, true);
+        xhr.send(null);
+    }
+
+});  
+
+</script>
+</html>

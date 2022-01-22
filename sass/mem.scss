@@ -1,0 +1,643 @@
+// *{
+//     outline: #f99 solid 2px;
+// }
+
+.wrap{
+    width: 100%;
+    max-width: 1200px;
+
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+ 
+.cloud_large {
+    display: none;
+}
+
+@media screen and (min-width:768px){
+    .cloud_large {
+        display: flex;
+        flex-basis: row;
+        position: absolute;
+        // top:-100px;
+        animation: 20s cloudGo linear infinite;
+    }
+}
+
+//會員資料 + 大頭貼
+.member_info{
+    display: flex;
+    // justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+}
+
+@media screen and (min-width:768px){
+.member_info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding: 130px 0 0 0;
+}
+}
+
+
+//大頭貼
+@media screen and (min-width:768px){
+.member_pic{
+    margin-left: 80px;
+    z-index: 2;
+}
+}
+
+.member_edit_label{
+    position: relative;
+}
+
+.member_imgPreview{
+    border: rgb(202, 157, 95) 6px solid;;
+    border-radius: 200%;
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+    margin: auto; 
+}
+
+#imgPreview_pic{
+    margin: auto;
+    width: 100%;
+}
+
+#member_upFile{
+    display: none;
+}
+
+.edit_text{
+    text-align: center;
+    padding: 10px 0 0 0;
+     
+    font-size: 20px;
+}
+
+.fas{
+    padding:0 0 0 10px ;
+    cursor: pointer;
+}
+
+.far{
+    padding:0 0 0 10px ;
+    cursor: pointer;
+}
+
+//會員資料
+.mem_info{
+    background-color: #fff;
+    border: #fff 2px solid;
+    border-radius: 10px;
+    position: relative; 
+    margin: 50px;
+    width: 80%; 
+    // padding: 15px 50px;
+}
+
+.member_data{
+    display: flex;
+    justify-content:space-around;
+    // align-items: center;
+    flex-wrap:wrap;
+    // margin:40px 0 50px 0;
+}
+
+@media screen and (min-width:768px){
+    .member_data{
+        margin:40px 50px 30px 50px;
+    }
+}
+
+
+
+
+.member_data input{
+    border: 1px solid #553636;
+    border-radius: 30px;
+    width: 150px;
+    // margin: 0 10px;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+    
+.edit_data{
+    display: flex;
+    margin: 15px 5px 15px 0;
+    padding-left: 10px;
+    line-height: 50%;
+}
+
+.edit_data_margin{
+    margin-top:0;
+}
+
+@media screen and (min-width:768px){
+    .edit_data_margin{
+        margin-top:15px;
+    }
+}
+
+.edit_data > h4{
+    font-family: 'KangXi';
+    font-size: 18px;
+    padding: 10px 0 0 0;
+}
+
+.edit_data_p{
+    font-family: 'Noto Sans TC', sans-serif;
+    padding-top: 11px;
+}
+
+.edit_data > input{
+    padding: 1px 0 1px 10px ;
+}
+
+.btn_edit{
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
+.btn_s{
+    background-color: #000;
+    color:#fff;
+}
+
+.redknot{
+    display:none;
+}
+
+@media screen and (min-width:768px){
+.redknot{
+    display: unset;
+    width: 150px;
+    position: absolute;
+    top:-40px;
+    left: 40%;
+}    
+}
+
+.change_data_btn{
+    position: absolute;
+    bottom: 10px;
+    left: 38%;
+}
+
+@media screen and (min-width:768px){
+    .change_data_btn{
+        left: 47%;
+    } 
+}
+
+@media screen and (min-width:967px){
+    .change_data_btn{
+        left: 44%;
+    }
+}
+
+//按鈕們
+.menu{
+    // list-style:none;
+    // margin:15px;
+    // padding:10px;
+    display:flex;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    // margin: 0 25px;
+}
+  
+.tablinks_reservation,.tablinks_post,.tablinks_coupon,.meun_btn{
+    display: block;
+    background-color: #b28850;
+    border-radius:60px;
+    box-shadow: 0 3px #888;
+    margin: 20px 20px 35px 20px;
+}
+
+.tablinks_card , .tablinks_collection{
+    display: block;
+    background-color: #b5956b;
+    border-radius:60px;
+    // box-shadow: 0 3px #888;
+}
+  
+.menu > li{
+    display: inline-block;    
+}
+
+.tablinks_reservation a , .tablinks_post a , .tablinks_coupon a , .meun_btn a{
+    color: #fff;  
+  /*   line-height: 40px; */
+    text-decoration: none;
+    display: block;
+    padding: 14px 28px;
+}
+
+.tablinks_card a , .tablinks_collection a{
+    color: #fff;  
+  /*   line-height: 40px; */
+    text-decoration: none;
+    display: block;
+    padding: 8px 20px;
+}
+
+//滑鼠進顏色變
+.menu a:hover { 
+    color: #fff;
+    background-color: #231515;
+    border-radius:60px;
+}
+
+//子選單藏起來
+.menu ul { 
+    display: none;
+}
+
+//滑鼠盡次選單出現
+.menu li:hover > ul { 
+    display: block;
+}
+
+.menu li{
+    position: relative;
+}
+
+.menu ul {
+    position: absolute;
+  /*   z-index: 99; */
+    top: 100%;
+    right:8px;
+    text-align:center;
+    max-width: 160px;
+    overflow:auto;
+    // padding:0px;
+    z-index: 1;
+    margin: 0 auto;
+}
+
+#updated_it{
+    display: none;
+}
+
+.function_area{
+    margin-top: 30px;
+}
+
+@media screen and (min-width:768px){
+    .function_area{
+    margin-top: 70px;
+}
+}
+
+
+/*  functional area - reservation */
+
+
+.reservation_area{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    // margin-top: 60px;
+}
+
+
+
+.reser_data{
+    position: relative;
+    margin: 0 auto;
+    // background-color: rgb(255, 255, 255);
+    background-image: url('../images/bg04.png');
+    background-position-y: -85px;
+    background-size: 100%;
+    // border: #fff 2px solid;
+    // border-bottom: #7d0000 2px solid;
+    box-shadow: 5px 5px 5px rgba(177, 147, 113, 0.459);
+    border-radius: 10px;  
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width:996px){
+    .reser_status_1 , .reser_status_3{
+        padding: 20px 20px 20px 100px;
+        background-image: url('../images/bg003.png');
+        background-repeat: no-repeat;
+    }
+    .reser_status_2{
+        padding: 20px 20px 20px 100px;
+        background-image: url('../images/bbbggg.png');
+        background-repeat: no-repeat;
+        background-position-y: -75px;
+    }
+}
+
+
+.reser_data > div{
+    display:flex;
+    padding:10px 0;
+}
+
+.reser_status_3{
+    filter: brightness(.8);
+}
+
+.reser_status_1 .checkin_or_not{
+    color:rgb(248, 127, 15); 
+}
+
+.reser_status_2 .checkin_or_not{
+    color:rgb(13, 82, 128); 
+}
+
+.reser_status_3 .checkin_or_not{
+    color:rgb(104, 9, 9); 
+}
+
+
+
+//湯牌
+.card_area , .collection_area{
+    margin:30px 60px;
+    display: flex;
+    justify-content: flex-start;
+    justify-items: auto;
+    flex-wrap: wrap;
+}
+
+.cards{
+    width:100%;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    min-height: 520px;
+}
+
+.card{
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.rope{
+	display: none;
+}
+
+
+
+@media screen and (min-width: 768px) {
+	.rope{
+		display: block;
+		font-size: 0;
+		position:absolute;
+		top:300px;
+		left: 50%;
+		width:5px;
+		display:flex;
+		transform: rotate(-90deg) translate(300px) scale(0.6,0.1);
+	}
+	.rope img{
+		filter: hue-rotate(-40deg);
+	}
+}
+
+.card{
+    width: 224px;
+    height: 100%;
+	min-height: 380px;
+	color: #4d2000;
+	// position: absolute;
+	font-family:'Mori';
+	filter:drop-shadow(0px 0px 5px rgba(0,0,0,0.5));
+	z-index: 998;
+	text-align: center;
+}
+
+.card .front{
+	background-image: url(../images/card_bg.png);
+	background-size: 810px 680px;
+	width: 100%;
+	height: 100%;
+	-webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 10%, 100% 100%, 0 100%, 0 10%);
+	clip-path: polygon(25% 0%, 75% 0%, 100% 10%, 100% 100%, 0 100%, 0 10%);
+	padding-top: 7.7142857142857%;
+}
+.card .knot{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: -30px;
+	z-index: 2;
+	margin: auto;
+	width: 150px;
+}
+
+
+.card .front .card_name{
+	text-align: center;
+	width: 100%;
+	padding: 15px 20px;
+    font-family: 'pigmo';
+    font-size: 18px;
+}
+.card .card_item_box{
+	width: 80%;
+	height: 35%;
+	margin: auto;
+}
+.card .card_item_box::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.card .card_item{
+	width: 50%;
+    height: 50%;
+    // max-height: 50px;
+	float: left;
+}
+
+.card .card_item h4{
+	font-family: 'KangXi';
+	margin-top: 5px;
+}
+.card div.front .card_item img{
+	width: 45px;
+	display: block;
+	margin: auto;
+}
+
+
+
+.card .front .card_btn_box{
+	width: 90%;
+	margin: auto;
+    display: flex;
+    margin-top:10px ;
+}
+
+.card_btn{
+	display: block;
+	margin: auto;
+	font-size: 15px;
+	background-color: #7d0000;
+	color: #f3ca93;
+	// transition: 0.5s;
+	cursor: pointer;
+}
+.card_btn:hover{
+	color: #fff;
+}
+
+
+
+//發表
+
+.post_area{
+    margin-bottom: 30px;
+    
+}
+
+.post_data{
+    width:85%;
+    border-collapse:collapse;
+    margin:0 auto;
+    padding: 10px 20px;
+    margin-top: 30px;
+    z-index: 2;
+}
+
+.post_data thead th {
+    padding:15px 0px;
+    color:#fff;
+    background-color:#915957;
+}
+
+.post_data td {
+    padding:10px 2px;
+    color:#555;
+    text-align:center;
+    background-color:#fff;
+    border-bottom:1px solid #915957;
+}
+
+
+//發表藥材＆文字顏色
+.post_data_time{
+    display:none;
+}
+
+.post_title_time{
+    display:none;
+}
+
+@media screen and (min-width:768px){
+    .post_data_time{
+        display:table-cell
+    }
+    
+    .post_title_time{
+        display:table-cell; 
+    }
+}
+
+//酷碰
+.coupons{
+    width: 320px;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    z-index: 2;
+}
+
+.coupon_data{
+    position: relative;
+}
+
+.coupon_dataImg{
+    width: 100%;
+}
+
+.coupon_num{
+    position: absolute;
+    top:45%;
+    left:48%;
+    transform: translate(-70%,-50%);
+    font-size: 36px;
+}
+
+.coupon_date{
+    text-align: center;
+    font-size: 24px;
+}
+
+.coupon_area{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    // width:90%;
+    padding: 10px 20px;
+    margin-top: 30px;
+}
+
+#card , #collection , #post , #coupon{
+    display:none;
+}
+
+.draw{
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .drawingArea{
+        transform: scale(.55);
+        width: 0;
+        height: 0; 
+        position: relative;
+        text-align: center;
+        vertical-align: baseline;
+    }
+    .circle1, .circle2, .circle3, .circle4, .circle5, .circle0{
+        position: relative;
+        /* letter-spacing: 0.1em; */
+    }                
+    .circle p{
+        font-weight: bold;
+        position: absolute;
+        display: block;
+        width: 25px;
+        margin: 0;
+        font-size: 60px;
+        font-family: 'Times New Roman';
+        vertical-align: top;
+    }
+}
+@media screen and (min-width: 768px) {
+    .cards{
+        width: 33.333333%;
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
+}
+
+#imgPreview_pic{
+    width:100%;
+    height: 100%;
+    object-fit: fill;
+}

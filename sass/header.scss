@@ -1,0 +1,683 @@
+.headerNow{
+  color: #fff;
+}
+// header{
+//   width:100%;
+// }
+
+// #nav_bar{
+//     position: fixed;
+//     z-index: 200;
+//     perspective: 700px;
+//     width: 100%;
+//     // height: 100vh;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     flex-direction: column;
+//     overflow: hidden;
+//     // pointer-events: none;
+//     // background: hsl(183, 100%, 95.25%);
+// }
+
+// #banner {
+//     width:100%;
+//     height: 100px;
+//     border: 0px dotted cyan;
+//     position: relative;
+//     transform-style: preserve-3d;
+//     transform: var(--transform);
+//     --transform: scale(1);
+//     display: none;
+//     margin: auto;
+//     margin-top: 0px;
+//     left:-300px;
+//   }
+//  #banner {
+//     display: flex;
+//     flex-direction: row;
+//     // justify-content: space-between;
+//     justify-content: center;
+//     align-items: center;
+//   }
+
+//   #mrSpringLogo{
+//     position: absolute;
+//     top:25px;
+//     left:25px;
+//     transition: 0.5s;
+//     z-index: -1;
+//   }
+//   #mrSpringLogo_w{
+//     position: absolute;
+//     bottom:-22px;
+//     left:18.5px;
+//     transition: 0.5s;
+//     opacity: 0;
+
+//   }
+  
+//   .flag:hover #mrSpringLogo{
+//     opacity: 0;
+// } 
+//   .flag:hover #mrSpringLogo_w{
+//       opacity: 1;
+//   } 
+
+//   .flag {
+//     display: flex;
+//     height: 100px;
+//     width: 150px;
+//     background:#976e37;
+//     clip-path: polygon(0 100%, 0 0, 19% 0, 19% 16%, 43% 16%, 43% 0, 60% 0, 60% 16%, 85% 16%, 85% 0, 100% 0, 100% 100%);
+//     background-image: url(../images/nav_texture.png);
+//     background-size: 450% 450%;
+//     background-repeat: no-repeat;
+//     transform-origin: 50% 0%;
+//     margin-left: -10px;
+//     justify-content: center;
+//     align-items: center;
+//     padding-bottom: 1rem;
+//     margin-right: -20px;
+//     cursor: pointer;
+    
+//   }
+//   .flag h2{ 
+//     margin: 0px;
+//     margin-top:30px;
+//   }
+ 
+//   .flag{
+//       font-family: "Pigmo";
+//       font-size: 24px;
+//       margin: 0px;
+//       color: #eac694;
+//     } 
+//   .flag:hover h2{
+//     color: #fff;
+//     transition: 0.5s;
+//   }
+
+//   .string {
+//     display: none;
+//   }
+//   .flag:nth-of-type(odd) {
+//     --hue: 343;
+//     --text: 95%;
+//   }
+//   .banner:nth-of-type(even) .flag:nth-of-type(even) {
+//     --hue: 333;
+//   }
+//   .banner:nth-of-type(even) .flag:nth-of-type(odd) {
+//     --hue: 193;
+//   }
+//   .banner:nth-of-type(3) .flag:nth-of-type(odd) {
+//     --hue: 33;
+//   }
+//   .banner:nth-of-type(3) .flag:nth-of-type(even) {
+//     --hue: 173;
+//   }
+  
+//   @supports (offset-path: path('M0,0 C100,100 700,200 800,100')) {
+//     .banner {
+//       height: 230px;
+//     }
+//     .banner:nth-of-type(even) {
+//       --transform: rotate(0deg);
+//     }
+//     .banner:nth-of-type(2) {
+//       --transform: scaleX(-1) rotate(-8deg);
+//     }
+//     .banner:nth-of-type(1) {
+//       --transform: rotate(-4deg);
+//     }
+//     .flag:not(.string) {
+//       position: absolute;
+//       offset-anchor: 50% 0%;
+//       offset-path: path(0 96%, 100% 96%, 100% 100%, 0% 100%);
+//     }
+    
+  
+//     .string,
+//     .string svg {
+//       position: absolute;
+//       width: 800px;
+//       top: 0;
+//       left: 0;
+//     //   height: 230px;
+//       display: block;
+//       background: transparent;
+//       clip-path: none;
+//     }
+//     .string path {
+//       stroke: hsla(183, 20%, 30%, .3);
+//       stroke-width: 3px;
+//       d: path(0 96%, 100% 96%, 100% 100%, 0% 100%);
+//     }
+//   }
+  
+//   body {
+//     height: 100vh;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     flex-direction: column;
+//     overflow: hidden;
+//     background: hsl(183, 100%, 95.25%);
+    
+//   }
+//   *, *::before, *::after {
+//     box-sizing: border-box;
+//   }
+
+
+// nav elements =====================================================================
+#nav_wrapper{
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #000;
+  display: none;
+  padding-right:50px;
+  padding-left:20px;
+  height: 50px;
+  overflow: hidden;
+}
+
+#mt_logo {
+  margin-right: 30px;
+  box-sizing: border-box;
+  overflow: hidden;
+  
+}
+#mt_logo img {
+  width: 150px;
+  position: relative;
+  top:14px;
+  /* margin-top: 3px; */
+}
+
+.nav_icon_wrap{
+  display: flex;
+  flex-direction: row;
+  // justify-content: center;
+  align-items: center;
+}
+
+
+
+
+// Login =====================================================================
+.Login_pic{
+  text-align: center;
+}
+.Login_pic>img{
+  width: 100px;
+  margin: auto;
+  margin-left:25px;
+  margin-top: 30px;
+}
+#memPic{
+  position:fixed;
+  // right:0px;
+  // top:0px;
+  // margin-right: 50px;
+  // margin-top: 30px;
+  margin: auto;
+  display:flex;
+  flex-direction:row-reverse;
+  align-items: center;
+  
+}
+#loginHereWrap{
+  width:50px;
+  height:50px;
+  border-radius: 50px;
+  overflow:hidden;
+  border:3px solid rgb(200, 169, 125); 
+  margin-left:5px;
+}
+#LoginHere{
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+
+// #lightBox::after{
+//   content: "";
+//   width:100%;
+//   height:100%;
+//   position: absolute;
+//   left:0;
+//   top:0;
+//   background: inherit;
+//   filter: blur(15px);
+//   z-index: 60;
+// }
+
+// #lightBox{
+// position: fixed;
+// width: 100%;
+// height: 100%;
+// background: rgba(66,66,66,.6);
+// transition:0.3s;
+// // z-index: 100;
+// }
+
+// .table_wrap{
+// background-image: url("../images/backGround.jpg");
+// background-size:200%;
+// position: relative;
+// width: 350px;
+// top: 20%;
+// left: 0;
+// right: 0;
+// bottom: 25%;
+// z-index: 2000;
+// margin:auto;
+// border-radius: 10px;
+// // background-color:#E7D5B1;
+
+// }
+// #tableLogin{
+// // position: fixed;
+// border-radius: 10px;
+// margin:auto;
+// // background: #FFF;
+// /* border:1px dotted deepPink; */
+// }
+
+// #tableLogin{
+// padding: 30px 20px 20px 20px ;
+// border: none;
+// }
+
+// .Login_title{
+//   text-align: center;
+//   padding: 20px 0px;
+//   font-size: 21px;
+//   font-weight: 600;
+// }
+// .btn_wrap{
+//   padding: 20px 0px;
+//   text-align: center;
+// }
+
+
+// #tableLogin  td{
+// padding:10px 20px;
+// height:20px;
+// // background: #FFF;
+// // border-radius:10px; 
+// border-style:none;
+// font-family: 'Noto Sans TC', sans-serif;
+// }
+
+
+// #tableLogin  tr:nth-of-type(4){
+//   padding-bottom: 10px;
+// }
+// #tableLogin  tr:nth-last-of-type(1){
+//   background-color: transparent;
+//   }
+
+//   #tableLogin  tr:nth-last-of-type(4){
+//     background-color: transparent;
+//     }
+
+
+// #tableLogin  input{
+// /* background-color:#FFCCDD; */
+// // font-size:16px;
+// // padding-left:2px;
+// // border-radius: 10px;
+// border: unset;
+// border-bottom:1.5px solid #C8A97D;
+// background-color: transparent;
+// padding: 5px 0px;
+// outline: none; 
+// }
+
+// #tableLogin ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+//   color: #C8A97D;
+//   opacity: 1; /* Firefox */
+// }
+
+// input {
+//   -webkit-autofill:none;
+// }
+
+// .center{
+//   text-align: center;
+// }
+
+// .first_time{
+//   padding-bottom: 30px;
+//   cursor: pointer;
+//   background: transparent;
+// }
+
+// #btnLogin{
+//   border:1.5px solid rgb(145, 123, 91);
+//   color: #000;
+//   width: 150px;
+//   background-image: 
+//   linear-gradient(180deg, #993333 55%,rgb(151, 98, 29) 98%),
+//   linear-gradient(-270deg, #05d5d7 10% , #ffa1a1 98%),
+// ;
+// background-blend-mode: screen;
+//   transition: 0.5s;
+// }
+// #btnLogin:hover{
+// background-image: 
+// linear-gradient(270deg,rgb(10, 10, 10)5%,  #4d3f26  90%)
+// ;
+// }
+
+// #btnLogin:hover span{
+//   color: #C8AB84;
+// }
+
+// #bar{
+
+// display: flex;
+// flex-direction: row;
+// align-items: center;
+// position: absolute;
+// right: 30px;
+
+// }
+// .accountWrap{
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// #accountIcon{
+//   margin-right: 10px;
+// }
+
+// #spanLogin{
+//   cursor:pointer;
+//   text-decoration:underline;
+//   margin-right: 5px;
+// }
+
+// #spanLogin:hover{
+//   opacity: 0.7;
+//   transition: 0.5s;
+// }
+
+
+// #memName{
+//   margin-right: 10px;
+
+// }
+
+//Login Lightbox======
+
+// #btnLoginCancel{
+//   background:transparent;
+//   height:30px;
+//   width:30px;
+//   position: absolute;
+//   right: 20px;
+//   top:0;
+// }
+// .x_x{
+//   background:transparent;
+//   position: relative;
+//   border-radius: 20px;
+//   border: 2px solid #fff;
+//   height:30px;
+//   width:30px;
+// }
+// #btnLoginCancel .top {
+//   -webkit-transform: translateY(11px) translateX(0) rotate(45deg);
+//           transform: translateY(11px) translateX(0) rotate(45deg);
+//   background: #fff;
+//   opacity:1;
+// }
+// #btnLoginCancel .bottom {
+//   -webkit-transform: translateY(-11px) translateX(0) rotate(-45deg);
+//           transform: translateY(-11px) translateX(0) rotate(-45deg);
+//   background: #fff;
+//   opacity:1;
+// }
+// #btnLoginCancel span {
+//   // background: #C8AB84;
+//   border: none;
+//   border-radius: 20px;
+//   height: 3px;
+//   width:20px;
+//   position: absolute;
+//   top: 0px;
+//   left:3px;
+//   transition: all .35s ease;
+//   cursor: pointer;
+// }
+// #btnLoginCancel span:nth-of-type(2) {
+//   top: 22px;
+// }
+
+
+// // burger =====================================================================
+
+
+
+// =====================================================================
+ 
+.overlay {
+  position: fixed;
+  // background: 
+  // // linear-gradient(225deg, #ffb199 10%, rgb(255, 102, 102) 90%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  opacity: 0%;
+  visibility: hidden;
+  transition: opacity .35s, visibility .35s, height .35s;
+  overflow: hidden;
+}
+.overlay.open {
+  position: fixed;
+  background:
+  url(object/slash_gray.png),
+  linear-gradient(225deg, #C8AB84 10%, rgb(32, 32, 32) 90%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  visibility: visible;
+  height: 100%;
+  z-index: 25;
+}
+.overlay.open li {
+  -webkit-animation: fadeInRight .5s ease forwards;
+          animation: fadeInRight .5s ease forwards;
+  -webkit-animation-delay: .35s;
+          animation-delay: .35s;
+}
+.overlay.open li:nth-of-type(2) {
+  -webkit-animation-delay: .4s;
+          animation-delay: .4s;
+}
+.overlay.open li:nth-of-type(3) {
+  -webkit-animation-delay: .45s;
+          animation-delay: .45s;
+}
+.overlay.open li:nth-of-type(4) {
+  -webkit-animation-delay: .50s;
+          animation-delay: .50s;
+}
+.overlay nav {
+  position: relative;
+  height: 70%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 50px;
+  font-family: 'Vollkorn', serif;
+  font-weight: 400;
+  text-align: center;
+}
+.overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+}
+.overlay ul li {
+  display: block;
+  height: 25%;
+  height: calc(100% / 5);
+  min-height: 50px;
+  position: relative;
+  opacity:0;
+}
+.overlay ul li a {
+  display: block;
+  position: relative;
+  font-family: "pigmo";
+  color: #FFF;
+  text-decoration: none;
+  overflow: hidden;
+}
+.overlay ul li a:checked:after, .overlay ul li a:focus:after, .overlay ul li a:active:after {
+  width: 100%;
+}
+.overlay ul li a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 3px;
+  background: #FFF;
+  transition: .35s;
+}
+
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+// media querey===========================================================================
+@media screen and (max-width:767px){
+
+  .overlay ul li a {
+    font-size: 30px;
+  }
+
+}
+@media screen and (max-width:991px){
+  #nav_wrapper{
+    display: flex;
+  }
+  .overlay {
+    opacity: 1;
+    visibility: visible;
+    z-index: 100;
+  }
+  // .nav_icon_wrap{
+  //     right: 25px;
+  // }
+
+  #nav_bar{
+       display: none; 
+  }
+  h2::after{
+      display: none;
+  }
+
+
+}
+@media screen and (min-width:992px) {
+  #mt_logo{
+    display: none;
+  }
+  
+
+  .overlay{
+      display: none;
+  }
+}
+
+#memPic{
+  position:fixed;
+  right:80px;
+  top:15px;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  cursor: pointer;
+  text-align:center;
+  z-index: 200;
+  /* align-items: center; */
+  
+}
+#loginHereWrap{
+  width:50px;
+  height:50px;
+  border-radius: 50px;
+  overflow:hidden;
+  border:3px solid rgb(200, 169, 125); 
+  margin-left:0px;
+  cursor: pointer;
+}
+
+.spanLoginWrap{
+  overflow:hidden;
+  border-radius:50px;
+}
+
+.loginTextS{       
+  cursor: pointer;
+}
+
+
+@media screen and (max-width:991px){
+  #memPic{
+     position:fixed;
+     top:7px;
+     right:50px;
+     flex-direction:row-reverse;
+     justify-content: center;
+     align-items: center;
+ } 
+ #loginHereWrap{
+     width:35px;
+     height:35px;
+     border:2px solid rgb(200, 169, 125); 
+ }
+ #loginText{
+     margin-right:5px;
+ }
+
+ }
+
+
+@media screen and (max-width:1199px) and (min-width:992px){
+ 
+#memPic{
+  position:fixed;
+  right:20px;
+} 
+}

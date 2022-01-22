@@ -1,0 +1,86 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+@font-face {
+  font-family: 'KangXi';
+  src: url(../font/TypeLand-com-KangXiZiDianTi-ShiYongBan-1.otf); }
+
+*{
+    padding: 0;
+    margin: 0;  
+}
+html{
+    overflow: hidden;
+    background-image: url('../images/backGround.jpg')
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background-image: url('../images/fjMountain.png');
+    position: relative;
+}
+
+.loginForm{
+    padding: 20px;
+    background-color: rgba(255,255,255,.4);
+    width: 20%;
+    text-align: center;
+    border-radius: 30px;
+    border: 3px solid #c29c49;
+    float: right;
+    margin-top: 80px;
+    margin-right: 320px;
+    img{
+        width: 80%;
+    }
+}
+
+
+h3{
+    font-size: 36px;
+    margin: 16px auto 6px;
+    font-family: 'KangXi';
+    span{        
+        padding: 10px;
+    }
+}
+
+p{
+    font-family: "Noto Sans Tc";
+    font-size: 20px;
+}
+
+label{
+    display: block;
+    font-size: 20px;
+    margin: 20px;
+    font-family: "Noto Sans Tc";
+    letter-spacing: 5px;
+    input{
+        margin-left: 20px;
+        padding: 6px 16px;
+        border-radius: 10px;
+        border: none transparent;
+    }
+    input:focus{
+        border: none transparent;
+    }
+}
+
+button{
+    width: 100px;
+    height: 40px;
+    color: #fff;
+    background-color: #a38034;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 22px;
+    cursor: pointer;
+    font-family: "Noto Sans Tc";
+    margin-top: 20px;
+}
+
+button:hover{
+    background-color: #7a5f25;
+}

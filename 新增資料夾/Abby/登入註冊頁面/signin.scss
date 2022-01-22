@@ -1,0 +1,439 @@
+// *{
+//     outline: 2px solid #ff9999;
+// }
+
+#nav_bar{
+    position: fixed;
+    z-index: 200;
+    perspective: 700px;
+    width: 100%;
+    // height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    overflow: hidden;
+    // pointer-events: none;
+    // background: hsl(183, 100%, 95.25%);
+}
+
+#banner {
+    width:100%;
+    height: 100px;
+    border: 0px dotted cyan;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: var(--transform);
+    --transform: scale(1);
+    display: none;
+    margin: auto;
+    margin-top: 0px;
+    left:-300px;
+  }
+ #banner {
+    display: flex;
+    flex-direction: row;
+    // justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #mrSpringLogo{
+    position: absolute;
+    top:25px;
+    left:25px;
+    transition: 0.5s;
+    z-index: -1;
+  }
+  #mrSpringLogo_w{
+    position: absolute;
+    bottom:-22px;
+    left:18.5px;
+    transition: 0.5s;
+    opacity: 0;
+
+  }
+  
+  .flag:hover #mrSpringLogo{
+    opacity: 0;
+} 
+  .flag:hover #mrSpringLogo_w{
+      opacity: 1;
+  } 
+
+  .flag {
+    display: flex;
+    height: 100px;
+    width: 150px;
+    background:#976e37;
+    clip-path: polygon(0 100%, 0 0, 19% 0, 19% 16%, 43% 16%, 43% 0, 60% 0, 60% 16%, 85% 16%, 85% 0, 100% 0, 100% 100%);
+    background-image: url(../images/nav_texture.png);
+    background-size: 450% 450%;
+    background-repeat: no-repeat;
+    transform-origin: 50% 0%;
+    margin-left: -10px;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
+    margin-right: -20px;
+    cursor: pointer;
+    
+  }
+  .flag h2{ 
+    margin: 0px;
+    margin-top:30px;
+  }
+ 
+  .flag{
+      font-family: "Pigmo";
+      font-size: 24px;
+      margin: 0px;
+      color: #eac694;
+    } 
+  .flag:hover h2{
+    color: #fff;
+    transition: 0.5s;
+  }
+
+  .string {
+    display: none;
+  }
+  .flag:nth-of-type(odd) {
+    --hue: 343;
+    --text: 95%;
+  }
+  .banner:nth-of-type(even) .flag:nth-of-type(even) {
+    --hue: 333;
+  }
+  .banner:nth-of-type(even) .flag:nth-of-type(odd) {
+    --hue: 193;
+  }
+  .banner:nth-of-type(3) .flag:nth-of-type(odd) {
+    --hue: 33;
+  }
+  .banner:nth-of-type(3) .flag:nth-of-type(even) {
+    --hue: 173;
+  }
+  
+  @supports (offset-path: path('M0,0 C100,100 700,200 800,100')) {
+    .banner {
+      height: 230px;
+    }
+    .banner:nth-of-type(even) {
+      --transform: rotate(0deg);
+    }
+    .banner:nth-of-type(2) {
+      --transform: scaleX(-1) rotate(-8deg);
+    }
+    .banner:nth-of-type(1) {
+      --transform: rotate(-4deg);
+    }
+    .flag:not(.string) {
+      position: absolute;
+      offset-anchor: 50% 0%;
+      offset-path: path(0 96%, 100% 96%, 100% 100%, 0% 100%);
+    }
+    
+  
+    .string,
+    .string svg {
+      position: absolute;
+      width: 800px;
+      top: 0;
+      left: 0;
+    //   height: 230px;
+      display: block;
+      background: transparent;
+      clip-path: none;
+    }
+    .string path {
+      stroke: hsla(183, 20%, 30%, .3);
+      stroke-width: 3px;
+      d: path(0 96%, 100% 96%, 100% 100%, 0% 100%);
+    }
+  }
+
+// nav elements =====================================================================
+#nav_wrapper{
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #000;
+  display: none;
+  padding-right:50px;
+  padding-left:20px;
+  height: 50px;
+  overflow: hidden;
+}
+
+#mt_logo {
+  margin-right: 30px;
+  box-sizing: border-box;
+  overflow: hidden;
+  
+}
+#mt_logo img {
+  width: 150px;
+  position: relative;
+  top:14px;
+  /* margin-top: 3px; */
+}
+
+.nav_icon_wrap{
+  display: flex;
+  flex-direction: row;
+  // justify-content: center;
+  align-items: center;
+}
+
+
+// Login =====================================================================
+
+.Login_pic img{
+  width: 100px;
+  margin-left:25px;
+  margin-top: 30px;
+}
+#LoginHere{
+  position: absolute;
+  top:30px;
+  right: 50px;
+  cursor: pointer;
+}
+
+#lightBox::after{
+  content: "";
+  width:100%;
+  height:100%;
+  position: absolute;
+  left:0;
+  top:0;
+  background: inherit;
+  filter: blur(15px);
+  z-index: 60;
+}
+
+#lightBox{
+position: fixed;
+width: 100%;
+height: 100%;
+background: rgba(66,66,66,.6);
+// z-index: 100;
+}
+
+
+
+.table_wrap{
+position: relative;
+width: 350px;
+top: 20%;
+left: 0;
+right: 0;
+bottom: 25%;
+z-index: 2000;
+margin:auto;
+border-radius: 10px;
+background-color:#E7D5B1;
+padding: 20px 0 0 0;
+}
+
+#signin_img{
+    display: none;
+    position: relative;
+    width: 100%;
+}
+
+#upFile{
+    display: none;
+}
+
+.fa-camera{
+    position: absolute;
+    top:75px;
+    left:200px;
+    font-size: 22px;
+}
+
+.imgPreview{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border: 1px solid #222;
+    border-radius: 200%;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+#imgPreview{
+    margin: auto;
+}
+
+.signin_label{
+   padding: 10px 0;
+}
+
+.table_data{
+display: flex;
+justify-content: center;
+// position: fixed;
+border-radius: 10px;
+// margin:auto;
+// background: #FFF;
+/* border:1px dotted deepPink; */
+text-align: center;
+padding: 20px 20px 20px 20px ;
+border: none;
+}
+#t1 #t2{
+    margin:0 auto;
+    text-align: center;
+}
+
+#t2{
+    display: none;
+}
+
+
+.Login_title{
+  padding: 15px 0px 5px 0;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.btn_wrap{
+  padding: 20px 0px;
+}
+
+
+.table_data  td{
+padding:15px 20px;
+height:20px;
+display: flex;
+// background: #FFF;
+// border-radius:10px; 
+border-style:none;
+font-family: 'Noto Sans TC', sans-serif;
+}
+
+
+.table_data  tr:nth-of-type(4){
+  padding-bottom: 10px;
+}
+.table_data  tr:nth-last-of-type(1){
+  background-color: transparent;
+  }
+
+  .table_data  tr:nth-last-of-type(4){
+    background-color: transparent;
+    }
+
+.table_data p{
+    padding: 0 10px;
+}
+
+.table_data  input{
+/* background-color:#FFCCDD; */
+// font-size:16px;
+// padding-left:2px;
+// border-radius: 10px;
+border: unset;
+border-bottom:1.5px solid #C8A97D;
+background-color: transparent;
+padding: 10px 0;
+outline: none;
+}
+
+.table_data ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #C8A97D;
+  opacity: 1; /* Firefox */
+}
+
+
+
+input {
+  -webkit-autofill:none;
+}
+
+//最下面的btn
+.first_time{
+  padding-bottom: 30px;
+  cursor: pointer;
+  background: transparent;
+}
+
+//登入註冊按鈕
+.btnLogin{
+  border:1.5px solid rgb(145, 123, 91);
+  color: #000;
+  width: 150px;
+  background-image: 
+  linear-gradient(180deg, #993333 55%,rgb(151, 98, 29) 98%),
+  linear-gradient(-270deg, #05d5d7 10% , #ffa1a1 98%),
+;
+background-blend-mode: screen;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.btnLogin:hover{
+background-image: 
+linear-gradient(270deg,rgb(10, 10, 10)5%,  #4d3f26  90%)
+;
+}
+
+.btnLogin:hover span{
+  color: #C8AB84;
+}
+
+#btn_signin{
+    display: none;
+}
+
+//Login Lightbox======
+
+#btnLoginCancel{
+  background:transparent;
+  height:30px;
+  width:30px;
+  position: absolute;
+  right: 20px;
+  top:0;
+}
+.x_x{
+  background:transparent;
+  position: relative;
+  border-radius: 20px;
+  border: 2px solid #fff;
+  height:30px;
+  width:30px;
+}
+#btnLoginCancel .top {
+  -webkit-transform: translateY(11px) translateX(0) rotate(45deg);
+          transform: translateY(11px) translateX(0) rotate(45deg);
+  background: #fff;
+  opacity:1;
+}
+#btnLoginCancel .bottom {
+  -webkit-transform: translateY(-11px) translateX(0) rotate(-45deg);
+          transform: translateY(-11px) translateX(0) rotate(-45deg);
+  background: #fff;
+  opacity:1;
+}
+#btnLoginCancel span {
+  // background: #C8AB84;
+  border: none;
+  border-radius: 20px;
+  height: 3px;
+  width:20px;
+  position: absolute;
+  top: 0px;
+  left:3px;
+  transition: all .35s ease;
+  cursor: pointer;
+}
+#btnLoginCancel span:nth-of-type(2) {
+  top: 22px;
+}
+
+

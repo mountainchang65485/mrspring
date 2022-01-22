@@ -1,0 +1,481 @@
+<?php 
+    ob_start();
+    session_start();
+    $_SESSION["where"] = $_SERVER['REQUEST_URI'];
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/signin.css">
+    <link rel="stylesheet" href="css/header.css">
+</head>
+<style>
+
+
+
+
+</style>
+<body>
+
+   
+    <!-- 導覽列 -->
+    <header>
+            <nav id="nav_bar">
+                <!-- <span id="memName"></span> -->
+    
+    
+                <script src="js/g4CheckLogin.js"></script>
+                
+                
+                <!-- <input type="hidden" name="memId" id="memId"> -->
+    
+                <ul id="banner">
+                    <a class="flag" href="custom.php">
+                        <h2>客製湯頭</h2>
+                    </a>
+                    <a class="flag" href="reservation.php">
+                        <h2>預約訂房</h2>
+                    </a>
+                    <a class="flag" href="home.php">
+                        <h1> <img id="mrSpringLogo_w" style="width:118.7px; " src="images/mrSpringLogo_W.svg" alt="湯先生">
+                            <img id="mrSpringLogo" style="width:110px;" src="images/mrSpringLogo.svg" alt="湯先生"></h1>
+                    </a>
+                    <a class="flag" href="forum.php">
+                        <h2>討論の區</h2>
+                    </a>
+                    <a class="flag" id="headerMemberLink">
+                        <h2>會員専區</h2>
+                    </a>
+                </ul>
+            </nav>
+    
+            <script src="js/headerMemberLink.js"></script>
+    
+            <div id="nav_wrapper">
+                <h1 id="mt_logo">
+                    <a href="home.php"><img src="images/logoHorizon.svg" alt="Mr.Spring Logo"></a>
+                </h1>
+                <!-- <div class="nav_icon_wrap">
+                    <span class="loginTextWarp">
+                         <span class="loginTextS" style="color:rgb(200, 169, 125);">登入</span>
+                    </span>
+                    <span class="spanLoginWrap">
+                         <img id="spanLogin" src="images/account.png" alt="member">
+                    </span>-->
+             
+    
+                <div class="button_container" id="toggle">
+                    <span class="top"></span>
+                    <span class="middle"></span>
+                    <span class="bottom"></span>
+                </div>
+            </div>
+    
+                <div id="memPic">
+                <span id="loginHereWrap">
+                    <img id="LoginHere" src="images/account.svg" alt="會員登入" style=" margin:auto;">
+                 </span>
+                    <span id="loginText" style="color:rgb(200, 169, 125);">登入</span>
+                </div>
+            <div class="overlay" id="overlay">
+    
+                <nav class="overlay-menu">
+                    <ul>
+                        <li><a href="home.php">Home</a></li>
+                        <li><a href="custom.php">客製湯頭</a></li>
+                        <li><a href="reservation.php">預約訂房</a></li>
+                        <li><a href="forum.php">討論の區</a></li>
+                        <li><a href="member.php">會員専區</a></li>
+                    </ul>
+                </nav>
+            </div>
+    
+    
+            <script>
+                $("#toggle").click(function () {
+                    $(this).toggleClass("action");
+                    $("#overlay").toggleClass("open");
+                });
+            </script>
+    
+        </header>
+        
+        <!-- 燈箱：登入 -->
+        <div id="lightBox" style=" z-index: 1000; position:fixed; display:none;">
+    
+            <!-- 登入 -->
+            <div id="login" class="table_wrap">
+                
+            <div style="text-align:center;">
+    
+                    <!-- 登入logo -->
+                    <figure id="login_img" class="Login_pic">
+                        <img src="images/Logo_browen.svg" alt="湯先生">
+                    </figure>
+    
+                    <!-- 註冊大頭貼 -->
+                    <form id="signin_img" class="Login_pic" enctype="multipart/form-data" action="signinUpload.php" method="post">
+                        <label class="signin_label">
+                            <input type="file" name="memUpFile" id="upFile" >
+                            <div class="imgPreview"><img id="imgPreview" src="images/Logo_browen.svg" alt="上傳檔案">
+                                <i class="fas fa-camera"></i></div>
+                        </label>
+            </div>
+    
+                <!--瀏覽上傳的圖片  -->
+                <script type="text/javascript">
+                    $('#upFile').change(function () {
+                        var file = $('#upFile')[0].files[0];
+                        var reader = new FileReader;
+                        reader.onload = function (e) {
+                            $('#imgPreview').attr('src', e.target.result);
+                        };
+                        reader.readAsDataURL(file);
+                    });
+    
+                </script>
+    
+    
+                <div style="text-align:center;">
+                    <p id="login_test" class="Login_title">會員登入</p>
+                    </div>
+                <div id="t1">
+                    <table  id="tableLogin" class="table_data">
+    
+                        <tr>
+                            <td>
+                                <label>帳號</label>
+                                <input type="text" id="memId" name="memId"  placeholder="example123">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>密碼</label>
+                                <input type="password" id="memPsw" name="memPsw" placeholder="******">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+    
+                <div id="t2">
+                    <table   id="table_signin" class="table_data">
+                        
+                        <tr>
+                            <td>
+                                <label>帳號</label>
+                                <input type="text" id="memId_s" name="memId_s" placeholder="輸入2~10英數字" maxlength="10"
+                                    minlength="2" autocomplete="off"  pattern="[A-z0-9]{2-10}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>密碼</label>
+                                <input type="password" id="memPsw_s" name="memPsw_s" placeholder="******" maxlength="10"
+                                    autocomplete="off" >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>姓氏</label>
+                                <input type="text" name="memFirstName" id="memLastName" placeholder="湯" maxlength="10"
+                                    autocomplete="off" >
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                <label>名字</label>
+                                <input type="text" name="memLastName" id="memFirstName" placeholder="生生" maxlength="10"
+                                    autocomplete="off" >
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                <label>暱稱</label>
+                                <input type="text" name="memNickname" id="memNickname" placeholder="我是湯先生" maxlength="10"
+                                    autocomplete="off" >
+                            </td>
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                <label>身分證</label>
+                                <input type="text" name="twId" id="twId" placeholder="S123456789" maxlength="10"
+                                    autocomplete="off" >
+                            </td>
+                        </tr>
+    
+                        
+                        <tr>
+                            <td>
+                                <label>信箱</label>
+                                <input type="email" name="memEmail" id="memEmail" placeholder="mrspring@email.com"
+                                    autocomplete="off" >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>電話</label>
+                                <input type="tel" name="memTel" id="memTel" placeholder="0912345678" maxlength="10"
+                                    autocomplete="off" >
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+    
+                <div class="btn_wrap">
+                <div style="text-align:center;">
+                <input type="button" name="login" for="form_table" class="btn_s btnLogin" id="btnLogin" value="登入"
+                            style="color:rgb(112, 95, 69); border:1.5px solid rgb(145, 123, 91);">
+                        <input type="submit" name="sign" for="signin_img" class="btn_s btnLogin" id="btn_signin" value="送出"
+                            style="color:rgb(112, 95, 69);margin:auto; border:1.5px solid rgb(145, 123, 91);">
+                </form>
+                        
+    
+                            <script>
+                                $('#btn_signin').click(function(e){
+                                    e.preventDefault(); // 成功阻擋Enter的submit動作!
+                                });
+                            </script>
+                        <!-- <span>登入</span> -->
+                        
+                        <button class="btn_s" id="btnLoginCancel" value="取消">
+                            <div class="x_x">
+                                <span class="top"></span>
+                                <span class="bottom"></span>
+                            </div>
+                        </button>
+                        </div>
+                </div>
+                <div style="text-align:center;">
+                    <button type="button" id="test_btn" class="first_time" onclick="memberFunction()">還沒申請帳號?</button>
+                </div>
+            </div>
+    
+            <!-- 登入後點頭像的燈箱============================================================================ -->
+    
+            
+            
+        </div>
+    
+        <div>
+    
+    
+    
+        </div>
+        <div id="gowhere"style="display:none;">
+            <div id="gowhere_container">
+            
+                <div style="text-align:center;">
+                        <p id="login_test" class="Login_title">去哪兒?</p>
+                </div>
+    
+    
+                <div class="btn_wrap">
+                    <div style="text-align:center;">
+                        <input type="button" name="login" for="form_table" class="btn_s btnLogin" id="btnLoginAfter"
+                            value="去會員專區" style="color:rgb(112, 95, 69); border:1.5px solid rgb(145, 123, 91);">
+                        <input type="button" name="sign" for="signin_img" class="btn_s btnLogin" id="btn_signinAfter"
+                            value="登出"
+                            style="color:rgb(112, 95, 69);margin:auto; border:1.5px solid rgb(145, 123, 91);">
+                        
+    
+    
+                        <!-- <script>
+                            document.getElementById("btn_signin").onclick= function(){
+                                document.getElementById("signin_img").submit();
+                            }
+                        </script> -->
+                        <!-- <span>登入</span> -->
+    
+                        <button class="btn_s" id="btnLoginCancelAfter" value="取消">
+                            <div class="x_x">
+                                <span class="top"></span>
+                                <span class="bottom"></span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+              
+        </div>
+    
+        <!-- 登入js -->
+            <script>
+                function memberFunction() {
+                    var w = document.getElementById('btnLogin');
+                    w.innerHTML = "註冊"
+                    var x = document.getElementById('login_test');
+                    x.innerHTML = "會員註冊";
+                    var y = document.getElementById('test_btn');
+                    // y.innerHTML = "已經有帳號了？";
+                    if (y.innerHTML == '已經有帳號了？') {
+                        y.innerHTML = '還沒申請帳號?';
+                        x.innerHTML = "會員登入";
+                        // w.innerHTML = "登入";
+                        document.getElementById('t2').style.display = 'none';
+                        document.getElementById('t1').style.display = 'block';
+                        document.getElementById('signin_img').style.display = 'none';
+                        document.getElementById('login_img').style.display = 'block';
+                        document.getElementById('btnLogin').style.display = 'block';
+                        document.getElementById('btn_signin').style.display = 'none';
+    
+                    } else {
+                        y.innerHTML = "已經有帳號了？";
+                        document.getElementById('t2').style.display = 'block';
+                        document.getElementById('t1').style.display = 'none';
+                        document.getElementById('signin_img').style.display = 'block';
+                        document.getElementById('login_img').style.display = 'none';
+                        document.getElementById('btnLogin').style.display = 'none';
+                        document.getElementById('btn_signin').style.display = 'block';
+                    }
+                }
+            </script>
+        
+    
+        <!-- 登入的SESSION -->
+        <script>
+        function $id(id){
+            return document.getElementById(id);
+        }	
+            function showLoginForm(){
+              //檢查登入bar面版上 spanLogin 的字是登入或登出
+              //如果是登入，就顯示登入用的燈箱(lightBox)
+              //如果是登出
+              //將登入bar面版上，登入者資料清空 
+              //spanLogin的字改成登入
+              //將頁面上的使用者資料清掉
+              
+              if($id('loginText').innerHTML == "登入"){
+                $id('lightBox').style.display = 'block';
+                $id("LoginHere").src = "images/account.svg";
+                $id("LoginHere").style.width = "100%";
+              }else{ //確認是否登出
+                $id('gowhere').style.display = 'block';
+                $id('btnLoginAfter').onclick = G4goMember;
+                $id('btn_signinAfter').onclick = G4LogOut;
+                function G4goMember(){
+                    location.href = "member.php";
+                }
+    
+                function G4LogOut(){
+                    $id('loginText').innerHTML = '登入';
+                    $id("LoginHere").src = "images/account.svg";
+                    $id("LoginHere").style.width = "100%";
+                    //清session的資料
+                    var xhr = new XMLHttpRequest();
+                    xhr.onload = function(){  //這裡若没有要做什麼事，可以不寫
+                      if( xhr.status == 200){
+                        // alert(xhr.responseText); 
+                      }
+                    }
+                    xhr.open("get", "php/loginOut.php",true);
+                    xhr.send(null);
+                    $id('gowhere').style.display = 'none';
+                    location.href = `${location.href}`;
+                }
+                
+              }
+    
+            }//showLoginForm
+    
+            function sendForm(){
+              //=====使用Ajax 回server端,取回登入者姓名, 放到頁面上    
+              var xhr = new XMLHttpRequest();
+              xhr.onload = function(){
+                // console.log(123);
+                if(xhr.status == 200){
+                  if( xhr.responseText == "notFound"){
+                    alert("帳密錯誤");
+                  }else{
+                    // $id("memName").innerHTML = memInfo.memFirstName;
+                    // $id('loginText').innerHTML = "登出";
+                    console.log(xhr.responseText)
+                    $id("LoginHere").src = xhr.responseText;
+                    $id("loginText").innerHTML = "登出";
+                    $id("LoginHere").style.width = "100%";
+                    $id("loginHereWrap").style.borderColor = "rgb(200, 169, 125)";
+                    // $id("LoginHere").style.position = "absolute";
+                     
+                  }
+                }else{
+                  alert(xhr.status);
+                }
+              }
+              xhr.open("post", "php/afterLogin.php", true);
+              xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+              var data_info = "memId=" + $id("memId").value + "&memPsw=" + $id("memPsw").value;
+              xhr.send(data_info);
+    
+    
+              //將登入表單上的資料清空，並隱藏起來
+              $id('lightBox').style.display = 'none';
+              $id('memId').value = '';
+              $id('memPsw').value = '';
+    
+            }
+    
+            function cancelLogin(){
+              //將登入表單上的資料清空，並將燈箱隱藏起來
+              $id('lightBox').style.display = 'none';
+              $id('memId').value = '';
+              $id('memPsw').value = '';
+            //   $id("loginHereWrap").style.border = "unset";
+            }
+    
+            
+            function cancelLogOut(){
+              //將登入表單上的資料清空，並將燈箱隱藏起來
+              $id('gowhere').style.display = 'none';
+            }
+    
+    
+        window.addEventListener("load", function(){
+           //初始化網頁....
+            //.....取登入者資訊
+            // var xhr = new XMLHttpRequest();
+            // xhr.onload = function(){
+            //   if( xhr.status == 200){
+            //     if( xhr.responseText != "notFound"){ //已登入
+            //     //   $id("memName").innerHTML = xhr.responseText;
+            //       $id("loginText").innerHTML = "登出";
+            //       $id("LoginHere").style.width = "50px";
+            //       $id("loginHereWrap").style.borderColor = "rgb(200, 169, 125)";
+            //     }
+            //   }
+            // }
+            // xhr.open("get", "php/afterLogin.php", true);
+            // xhr.send(null);  
+    
+            //註冊事件處理器....
+            //===設定spanLogin.onclick 事件處理程序是 showLoginForm
+    
+            $id('memPic').onclick = showLoginForm;
+    
+            //===設定btnLogin.onclick 事件處理程序是 sendForm
+            $id('btnLogin').onclick = sendForm;
+    
+            //===設定btnLoginCancel.onclick 事件處理程序是 cancelLogin
+            $id('btnLoginCancel').onclick = cancelLogin;
+    
+            $id("btnLoginCancelAfter").onclick=cancelLogOut;
+    
+        })  
+    
+        </script>
+    
+
+
+
+         <script src="js/header.js"></script>
+    
+    
+</body>
+</html>

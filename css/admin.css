@@ -1,0 +1,285 @@
+*{
+	font-family: '微軟正黑體';
+	box-sizing: border-box;
+	font-size: 14px;
+}
+
+a{
+	text-decoration: none;
+	color: #333;
+}
+
+table th{
+	vertical-align: middle;
+}
+
+html {
+    overflow: -moz-hidden-unscrollable;
+    height: 100%;
+}
+
+body::-webkit-scrollbar 
+{
+    display: none;
+    -ms-overflow-style: none;
+    height: 100%;
+	width: calc(100vw + 18px);
+	overflow: auto;
+}
+
+.admin_bg{
+	background-image: url(../images/backGround.jpg);
+	background-attachment: fixed;
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -99;
+}
+.admin_wrap{
+	width: 1200px;
+	margin: auto;
+	padding-top: 150px;
+	padding-bottom: 50px;
+	font-family: 微軟正黑體;
+	font-size: 18px;
+	color: #333;
+}
+
+.admin_nav{
+	justify-content: center;
+}
+
+.admin_wrap .admin_nav{
+	margin-bottom: 10px;
+	background-color: #fff;
+	display: flex;
+}
+
+.admin_wrap .admin_nav ul{
+	display: flex;
+	/* width: 100%; */
+}
+.admin_wrap .admin_nav li{
+	/* width: 12.5%; */
+	text-align: center;
+	padding: 10px 20px;
+	cursor: pointer;
+	display: block;
+	position: relative;
+	z-index: 11;
+}
+.admin_wrap .admin_nav li:hover{
+	background-color: #4d2000;
+	color: #fff;
+}
+
+.admin_wrap .admin_nav li:hover a{
+	color: #fff;
+}
+
+
+.admin_robot_item,
+.admin_service_item{
+	position: absolute;
+	width: 100%;
+	bottom: -75px;
+	left: 0;
+	display: none;
+	background-color: rgba(255,255,255,0.7);
+	z-index: 10;
+	transition: 0.2s;
+}
+.admin_service_item{
+	bottom: -114px;
+}
+.admin_robot_item p,
+.admin_service_item p{
+	padding: 10px;
+}
+.admin_robot_item p:hover,
+.admin_service_item p:hover{
+	background-color: #ad2200;
+	color: #ddd;
+}
+.admin_nav_robot:hover .admin_robot_item,
+.admin_nav_service:hover .admin_service_item{
+	opacity: 1;
+	display: block;
+	color: #333;
+}
+.admin_content{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+.item_wrap{
+	width: 30%;
+	background-color: rgba(255,255,255,0.8);
+	padding: 20px;
+	overflow: auto;
+}
+.add{
+	width: 30px;
+	height: 30px;
+	border: 2px #666 solid;
+	border-radius: 50%;
+	margin-bottom: 10px;
+	position: relative;
+}
+.add::after{
+	content: "";
+	position: absolute;
+	left: 2px;
+	top: 12px;
+	height: 0;
+	width: 20px;
+	border: 1px #666 solid;
+}
+.add::before{
+	content: "";
+	position: absolute;
+	left: 2px;
+	top: 12px;
+	height: 0;
+	width: 20px;
+	border: 1px #666 solid;
+	transform: rotate(90deg);
+}
+
+.add:hover::before, .add:hover::after{
+	border-color: #fff;
+}
+
+.item_wrap table{
+	width: 100%;
+}
+.item_wrap th,.item_wrap td{
+	padding: 10px 10px;
+	text-align: center;
+}
+.item_wrap th{
+	font-weight: bold;
+	padding: 20px 10px;
+}
+.item_wrap tr{border:  2px #aaf solid;}
+.edit_wrap{
+	width: calc(70% - 10px);
+	margin-left: 10px;
+	padding: 20px;
+	background-color: rgba(255,255,255,0.8);
+}
+.edit_wrap table{
+	width: 100%;
+	border: #aaf 2px solid;
+}
+.edit_wrap th,.edit_wrap td{
+	padding: 20px 10px;
+}
+.edit_wrap th{
+	text-align: right;
+	font-weight: bold;
+}
+.edit_wrap input,.edit_wrap select,.edit_wrap textarea{
+	padding: 5px 5px;
+}
+.edit_wrap input[type="radio"]{
+	margin-right: 10px;
+}
+.edit_wrap textarea{
+	width: 300px;
+	height: 100px;
+	resize: none;
+}
+.edit_wrap .edit_btn,.robot_msg_wrap .edit_btn{
+	width: 300px;
+	margin: auto;
+	text-align: center;
+}
+.edit_wrap input[type="submit"],.edit_wrap input[type="reset"],
+.robot_msg_wrap input[type="submit"],.robot_msg_wrap input[type="reset"]{
+	width: 60px;
+	height: 30px;
+	border-radius: 10px;
+	border: none;
+	background-color: #aaa;
+	margin-left: 10px;
+	margin-right: 10px;
+	outline: none;
+}
+
+.robot_msg_wrap{
+	width: 100%;
+	margin: auto;
+	background-color: rgba(255,255,255,0.8);
+	padding: 50px;
+}
+.robot_msg_wrap form{
+	width: 50%;
+	margin: auto;
+}
+.robot_msg_wrap th{
+	font-weight: bold;
+}
+.robot_msg_wrap textarea{
+	width: 350px;
+	height: 150px;
+	resize: none;
+	padding: 10px;
+}
+.robot_msg_wrap .edit_btn{
+	margin-top: 30px;
+}
+
+.admin_content_item textarea{
+	width: 600px;
+}
+.kind_of_report{
+	margin-bottom: 10px;
+}
+
+
+.admin_content_oder .filter{
+	margin-bottom: 20px;
+}
+.admin_content_oder .filter input{
+	height: 30px;
+}
+.admin_content_oder .filter select{
+	height: 30px;
+}
+.admin_content
+{
+	/* display: none; */
+}
+.admin_content_item{
+	display: flex;
+}
+
+.navItemsTr:hover{
+	cursor: pointer;
+	background-color: #666;
+	color: #fff;
+}
+.itemForms{
+	background-color: #fff;
+	padding: 20px;
+	z-index: -1;
+	display: none;
+}
+.edit_wrap{
+	padding: 0;
+}
+
+.add.navItemsTr{
+	margin:20px auto;
+}
+
+.navNow{
+	background-color: #666;
+}
+
+.navNow a{
+	color: #fff;
+}

@@ -1,0 +1,42 @@
+.wrapper {
+  width: 200px;
+  /* Set the size of the progress bar */
+  height: 200px;
+  position: absolute;
+  /* Enable clipping */
+  /* clip: rect(0px, 200px, 200px, 100px); Hide half of the progress bar */ }
+
+/* Set the sizes of the elements that make up the progress bar */
+#clock_circle {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px; }
+
+.path {
+  /* width: 100%; */
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  /* position: absolute; */
+  left: 5px;
+  animation: dash 25s linear forwards;
+  /* z-index: 10; */ }
+
+.circle2 {
+  width: 190px;
+  height: 190px;
+  border: 5px solid #d6d6d6;
+  border-radius: 100px;
+  position: absolute;
+  overflow: hidden; }
+
+.more_shows svg {
+  position: relative; }
+
+/* Using the data attributes for the animation selectors. */
+/* Base settings for all animated elements */
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0; } }
+
+/* ===================================================== */

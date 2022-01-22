@@ -1,0 +1,554 @@
+*{
+    outline: #f99 solid 2px;
+}
+
+.wrap{
+    width: 100%;
+    max-width: 1200px;
+}
+ 
+//會員資料 + 大頭貼
+.member_info{
+    display: flex;
+    // justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (min-width:768px){
+.member_info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding: 130px 0 0 0;
+}
+}
+
+
+//大頭貼
+@media screen and (min-width:768px){
+.member_pic{
+    margin-left: 80px;
+}
+}
+
+.member_edit_label{
+    position: relative;
+}
+
+.member_imgPreview{
+    border: #231515 1px solid;
+    border-radius: 200%;
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+    margin: auto; 
+}
+
+#imgPreview_pic{
+    margin: auto;
+    width: 100%;
+}
+
+#member_upFile{
+    display: none;
+}
+
+.edit_text{
+    text-align: center;
+    padding: 10px 0 0 0;
+}
+
+.fas{
+    padding:0 0 0 10px ;
+}
+
+//會員資料
+.mem_info{
+    background-color: #fff;
+    border: #fff 2px solid;
+    border-radius: 10px;
+    position: relative; 
+    margin: 50px;
+    width: 80%; 
+    // padding: 15px 50px;
+}
+
+.member_data{
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    flex-wrap:wrap;
+    margin:40px 10px 50px 10px;
+}
+
+@media screen and (min-width:768px){
+    .member_data{
+        margin:40px 50px 50px 50px;
+    }
+}
+
+
+.member_data input{
+    border: 1px solid #553636;
+    border-radius: 30px;
+    width: 200px;
+    margin: 0 10px;
+}
+
+@media screen and (min-width:768px){
+    .member_data input{
+    margin: 0 30px;
+    }
+}
+    
+.edit_data{
+    display: flex;
+    margin: 15px 5px 15px 0;
+    padding-left: 10px;
+}
+
+.edit_data > input{
+    padding: 0 0 0 10px;
+}
+
+.btn_edit{
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
+.redknot{
+    display:none;
+}
+
+@media screen and (min-width:768px){
+.redknot{
+    display: unset;
+    width: 150px;
+    position: absolute;
+    top:-40px;
+    left: 40%;
+}    
+}
+
+.change_data_btn{
+    position: absolute;
+    bottom: 10px;
+    left: 38%;
+}
+
+@media screen and (min-width:768px){
+    .change_data_btn{
+        left: 47%;
+    } 
+}
+
+@media screen and (min-width:967px){
+    .change_data_btn{
+        left: 44%;
+    }
+}
+
+//按鈕們
+.menu{
+    // list-style:none;
+    // margin:15px;
+    // padding:10px;
+    display:flex;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    margin: 0 25px;
+}
+  
+.tablinks_reservation,.tablinks_post,.tablinks_coupon,.meun_btn{
+    display: block;
+    background-color: #b28850;
+    border-radius:60px;
+    box-shadow: 0 3px #888;
+    margin: 20px;
+}
+
+.tablinks_card , .tablinks_collection{
+    display: block;
+    background-color: #b5956b;
+    border-radius:60px;
+    // box-shadow: 0 3px #888;
+}
+  
+.menu > li{
+    display: inline-block;    
+}
+
+.tablinks_reservation a , .tablinks_post a , .tablinks_coupon a , .meun_btn a{
+    color: #fff;  
+  /*   line-height: 40px; */
+    text-decoration: none;
+    display: block;
+    padding: 14px 28px;
+}
+
+.tablinks_card a , .tablinks_collection a{
+    color: #fff;  
+  /*   line-height: 40px; */
+    text-decoration: none;
+    display: block;
+    padding: 8px 20px;
+}
+
+//滑鼠進顏色變
+.menu a:hover { 
+    color: #fff;
+    background-color: #231515;
+    border-radius:60px;
+}
+
+//子選單藏起來
+.menu ul { 
+    display: none;
+}
+
+//滑鼠盡次選單出現
+.menu li:hover > ul { 
+    display: block;
+}
+
+.menu li{
+    position: relative;
+}
+
+.menu ul {
+    position: absolute;
+  /*   z-index: 99; */
+    top: 100%;
+    right:8px;
+    text-align:center;
+    max-width: 160px;
+    overflow:auto;
+    // padding:0px;
+    z-index: 1;
+    margin: 0 auto;
+}
+
+#updated_it{
+    display: none;
+}
+
+.function_area{
+    margin-top: 30px;
+}
+
+@media screen and (min-width:768px){
+    .function_area{
+    margin-top: 70px;
+}
+}
+
+
+/*  functional area - reservation */
+
+
+.reservation_area{
+    display: flex;
+    justify-content: center;
+    // margin-top: 60px;
+}
+
+.reser_dataImg{
+    width: 700px;
+    max-width: 100%;
+}
+
+.reser_data{
+    /* width: 400px;
+    height: 250px; */
+    position: relative;
+    // margin-left: 5px;
+    /* margin-top: 20px; */
+    margin: 0 auto;
+}
+
+.reser_img{
+    display: none;
+}
+
+@media screen and (min-width:768px){
+    .reser_img{
+        position: absolute;
+        top: 38px;
+        left: 33px;
+        width: 120px;
+        height:120px;
+        display:show;
+    }
+}
+
+.reser_pic{
+    width: 100%;
+}
+
+.reser_text{
+    position: absolute;
+    top: 25px;
+    left: 50px;
+    width: 200px;
+    height: 120px;
+    font-size: 12px;
+    display: flex;
+    flex-direction:column;
+    
+}
+
+
+
+.reser_text > div > p{
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.reser_qrcode{
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    width: 70px;
+}
+
+.reser_qrcode img {
+    width: 100%;
+}
+
+//湯牌
+.card_area , .collection_area{
+    margin:30px 60px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+.card{
+    margin:40px;
+}
+
+.rope{
+	display: none;
+}
+
+
+
+@media screen and (min-width: 768px) {
+	.rope{
+		display: block;
+		font-size: 0;
+		position:absolute;
+		top:300px;
+		left: 50%;
+		width:5px;
+		display:flex;
+		transform: rotate(-90deg) translate(300px) scale(0.6,0.1);
+	}
+	.rope img{
+		filter: hue-rotate(-40deg);
+	}
+}
+
+.card{
+	width: 224px;
+	height: 420px;
+	color: #4d2000;
+	// position: absolute;
+	font-family:'Mori';
+	filter:drop-shadow(0px 0px 5px rgba(0,0,0,0.5));
+	z-index: 998;
+	text-align: center;
+}
+
+.card .front{
+	background-image: url(../images/card_bg.png);
+	background-size: 810px 680px;
+	width: 100%;
+	height: 100%;
+	-webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 10%, 100% 100%, 0 100%, 0 10%);
+	clip-path: polygon(25% 0%, 75% 0%, 100% 10%, 100% 100%, 0 100%, 0 10%);
+	padding-top: 7.7142857142857%;
+}
+.card .knot{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: -30px;
+	z-index: 2;
+	margin: auto;
+	width: 150px;
+}
+.card .front .badge{
+	display: block;
+	width: 65%;
+	margin: auto;
+}
+.card .front .card_name{
+	text-align: center;
+	width: 100%;
+	padding: 5px 20px;
+	font-family: 'pigmo';
+}
+.card .card_item_box{
+	width: 80%;
+	height: 40%;
+	margin: auto;
+}
+.card .card_item_box::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.card .card_item{
+	width: 50%;
+	height: 50%;
+	float: left;
+}
+
+.card .card_item h4{
+	font-family: 'KangXi';
+	margin-top: 5px;
+}
+.card div.front .card_item img{
+	width: 45px;
+	display: block;
+	margin: auto;
+}
+
+
+
+.card .front .card_btn_box{
+	width: 90%;
+	margin: auto;
+    display: flex;
+    margin-top:20px ;
+}
+
+.card .front .card_btn_box a{
+	display: block;
+	margin: auto;
+	font-size: 15px;
+	background-color: #7d0000;
+	color: #f3ca93;
+	// transition: 0.5s;
+	cursor: pointer;
+}
+.card .front .card_btn_box a:hover{
+	color: #fff;
+}
+
+
+
+//發表
+.post_data{
+    width:85%;
+    border-collapse:collapse;
+    margin:0 auto;
+    padding: 10px 20px;
+    margin-top: 30px;
+}
+
+.post_data thead th {
+    padding:15px 0px;
+    color:#fff;
+    background-color:#915957;
+}
+
+.post_data td {
+    padding:10px 2px;
+    color:#555;
+    text-align:center;
+    background-color:#fff;
+    border-bottom:1px solid #915957;
+}
+
+
+//發表藥材＆文字顏色
+.post_data_medicine{
+    display:none;
+}
+
+.post_title_medicine{
+    display:none;
+}
+
+@media screen and (min-width:768px){
+    .post_data_medicine{
+        display:table-cell
+    }
+    
+    .post_title_medicine{
+        display:table-cell; 
+    }
+}
+
+@media screen and (min-width:768px){
+    .post_data_medicine div{ 
+    display: inline-block;
+    padding: 5px 10px ;
+    border-radius: 40px;
+    color: #fff;
+    // margin: 0 10px;comput
+    margin: 2px 10px;
+}
+}
+
+.color_green{ 
+    background-color: #6a912d; 
+}
+
+.color_red{ 
+    background-color: #b24f59; 
+}
+
+.color_orange{ 
+    background-color: #dd7d1d; 
+}
+
+
+
+
+
+//酷碰
+.coupons{
+    width: 320px;
+    margin-left: 1%;
+}
+
+.coupon_data{
+    position: relative;
+}
+
+.coupon_dataImg{
+    width: 100%;
+}
+
+.coupon_num{
+    position: absolute;
+    top: 35%;
+    left:28%;
+    font-size: 45px;
+}
+
+.coupon_total{
+    text-align: center;
+    font-size: 24px;
+}
+
+.coupon_area{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    // width:90%;
+    padding: 10px 20px;
+    margin-top: 30px;
+}
+
+#card , #collection , #post , #coupon{
+    display:none;
+}
+

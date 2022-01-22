@@ -1,0 +1,79 @@
+.wrapper_more_show {
+    width:30vw; 
+    /* Set the size of the progress bar */
+    height:30vw;
+    display: flex;
+    margin: auto;
+    position: relative;    /* Enable clipping */
+    left: 0px;
+    z-index: 5;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    /* overflow: hidden; */
+    /* clip: rect(0px, 300px, 300px, 0px); Hide half of the progress bar */
+  }
+  .hoster_pic_small{
+    width: 30vw;
+    height: 30vw;
+    /* border: 2px solid rgb(73, 73, 73); */
+    border-radius:100%;
+    position: absolute;
+    top:0px;
+    overflow: hidden;
+  }
+  
+  .hoster_pic_small img{
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    left:0px;
+    transform: scale(1.1);
+}
+  
+
+  .circle_wrap{
+    position: absolute;
+    width: 100%;
+  }
+
+  .circle_run{
+    width:100%;
+    position: absolute;
+    z-index: 5;
+    top:0px;
+    /* margin: auto; */
+  }
+
+  @media screen and (min-width:768px) and (max-width:992px){
+    .wrapper_more_show {
+      width:15vw;
+      height:15vw;
+    }
+    .hoster_pic_small{
+      width: 15vw;
+      height: 15vw;
+    }
+  }
+  @media screen and (min-width:992px) and (max-width:1200px){
+    .wrapper_more_show {
+      width:15vw;
+      height:15vw;
+    }
+    .hoster_pic_small{
+      width: 15vw;
+      height: 15vw;
+    }
+  }
+
+  @media screen and (min-width:1200px){
+    .wrapper_more_show {
+      width:10vw;
+      height:10vw;
+    }
+    .hoster_pic_small{
+      width: 10vw;
+      height: 10vw;
+    }
+  }
+  
+  

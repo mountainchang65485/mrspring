@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>湯先生 Mr.Spring - 小遊戲</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/share.css">
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/clockMain.css">
+</head>
+
+<body>
+
+    <div class="game_container">
+        <div class="mt_bg_wrap">
+            <div class="mt_cloud">
+                <div class="cloud_large">
+                    <img src="images/cloud_large.png" alt="cloud">
+                    <img src="images/cloud_large.png" alt="cloud">
+                    <img src="images/cloud_large.png" alt="cloud">
+                </div>
+                <!-- <div class="bg_mt">
+                            <img src="images/fjMountain.png" alt="fujiMountain">
+                            <img src="images/first_page_trees.png" alt="trees">
+                        </div> -->
+                <div id="mt_water">
+                    <img src="images/fjMountain.png" alt="fujiMountain">
+                    <!-- <div id="water_wrap">
+                                <canvas id="canvas"></canvas>
+                            </div> -->
+                    <div id="water_color_change"></div>
+                    <div id="water_color_nochange"></div>
+
+                </div>
+            </div>
+        </div>
+        <!-- 遊戲訊息 end -->
+        <!-- 遊戲主螢幕 start -->
+        <div id="game_box">
+            <!--倒數時間 -->
+            <div id="tip_wrap">
+                <div class="game_over_tip"></div>
+                <span class="coupon_ticket">  
+                    <!-- <img class="special" src="images/coupon.png" alt="" > -->
+                    <div class="coupon_discount_score"></div>
+                </span>
+                <a id="bonus" class="game_over_tip3" href="custom.php">立刻前往客製湯頭</a>
+                <a id="backtoHome" class="game_over_tip3" href="home.php">回首頁</a>
+                <input type="hidden" id="getScore">
+            </div>
+            <div class="time_container">
+                <div class="joy_show_main_player">
+                    <div class="now_playing">
+
+                        <div class="wrapper" data-anim="base wrapper">
+
+                            <!-- 遊戲訊息欄 -->
+
+                            <div id="game_info">
+                                <div class="life_board">
+                                    <div>生命值</div>
+                                    <div style="text-align: left;">
+                                        <div class="life_bar_box"><span id="lifeBar"></span></div>
+                                    </div>
+                                    <div style="display:none;">關卡</div>
+                                    <div><strong id="gameLevel">1</strong></div>
+                                    <div id="nowScore">目前得分</div>
+                                    <div id="gameCent">0</div>
+                                    <input type="hidden" id="getScore">
+                                    <input type="hidden" id="couponNo">
+                                    <input type="hidden" id="couponName">
+                                    <input type="hidden" id="couponDiscount">
+                                    <input type="hidden" id="memCouponDate">
+                                </div>
+
+                            </div>
+                            <img src="images/circle01.svg" alt="">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 195 195" id="clock_circle">
+                                <defs>
+                                    <style>
+                                        .path {
+                                            fill: rgba(255, 248, 240, 0);
+                                            stroke: rgb(146, 0, 0);
+                                            stroke-miterlimit: 10;
+                                            stroke-width: 5;
+                                            stroke-linecap: round;
+                                            stroke-alignment: inner;
+                                        }
+                                    </style>
+                                </defs>
+                                <g id="圖層_2" data-name="圖層 2">
+                                    <g id="圖層_1-2" data-name="圖層 1">
+                                        <path class="path" d="M97.5,2.5a95,95,0,1,1-95,95,95,95,0,0,1,95-95" />
+                                    </g>
+                                </g>
+                            </svg>
+                            <div id="count_back">
+                                <span id="timeBack">剩餘時間</span><br>
+                                <span id="divNum">15</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <!-- 菜籃 -->
+            <div class="car_bar">
+                <div id="carBox" class="car">
+                </div>
+            </div>
+            <!-- 遊戲螢幕 end -->
+            <!-- 遊戲控制 start -->
+            <div id="game_control">
+                <div id="game_control_txt">
+                    使用"→"跟"←"控制接住藥材，<br>會依照藥材數量與等級給予不同獎賞喔!
+                </div>
+                <button onclick="document.getElementById('game_control').style.display='none'" id="btnStart">
+                    開始
+                </button>
+                
+                <input type="hidden" id="memNo">
+            </div>
+
+        </div>
+    </div>
+    <form method="post" action="coupon.php" id="coupon1">
+        <input id="bonusgo" type="hidden" name="coupon" value="">
+    </form>
+    <script src="js/game.js"></script>
+    <script>
+        // var timeCircle = document.getElementsByClassName("clock_circle")[1];
+        $(function () {
+
+            $("#btnStart").click(function () {
+                // alert('ok');
+                FruitGame.Start();
+                $('#clock_circle').css("display", 'block');
+            });
+        });
+        $(document).ready(function () {
+            $("#bonus").click(function () {
+                // alert('ok');
+                bonuscheck();
+            });
+        })
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

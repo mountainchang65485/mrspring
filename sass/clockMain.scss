@@ -1,0 +1,103 @@
+.wrapper {
+    width: 200px; /* Set the size of the progress bar */
+    height: 200px;
+    position: absolute;    /* Enable clipping */
+    /* clip: rect(0px, 200px, 200px, 100px); Hide half of the progress bar */
+  }
+  /* Set the sizes of the elements that make up the progress bar */
+//   .circle {
+//     width: 190px;
+//     height: 190px;
+//     border: 5px solid rgb(146, 0, 0);
+//     border-radius: 100px;
+//     position: absolute;
+//     clip: rect(0px, 100px, 200px, 0px);
+//   }
+
+#clock_circle{
+    display:none;
+    position: absolute;
+    top:0px;
+    left:0px;
+    
+}
+
+  .path{
+    /* width: 100%; */
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    /* position: absolute; */
+    left:5px;
+    animation: dash 25s linear forwards;
+    /* z-index: 10; */
+  }
+  .circle2 {
+    width: 190px;
+    height: 190px;
+    border: 5px solid rgb(214, 214, 214);
+    border-radius: 100px;
+    position: absolute;
+    overflow: hidden;
+  }
+
+  .more_shows svg{
+    position: relative;
+  }
+  
+
+  /* Using the data attributes for the animation selectors. */
+  /* Base settings for all animated elements */
+//   div[data-anim~=base] {
+//     -webkit-animation-iteration-count: 1;  /* Only run once */
+//     -webkit-animation-fill-mode: forwards; /* Hold the last keyframe */
+//     -webkit-animation-timing-function:linear; /* Linear animation */
+//   }
+  
+//   .wrapper[data-anim~=wrapper] {
+//     -webkit-animation-duration: 60s; /* Complete keyframes asap */
+//     -webkit-animation-delay: 60s; /* Wait half of the animation */
+//     -webkit-animation-name: close-wrapper; /* Keyframes name */
+//   }
+  
+//   .circle[data-anim~=left] {
+//     -webkit-animation-duration: 120s; /* Full animation time */
+//     -webkit-animation-name: left-spin;
+//   }
+  
+//   .circle[data-anim~=right] {
+//     -webkit-animation-duration: 60s; /* Half animation time */
+//     -webkit-animation-name: right-spin;
+//   }
+//   /* Rotate the right side of the progress bar from 0 to 180 degrees */
+//   @-webkit-keyframes right-spin {
+//     from {
+//       -webkit-transform: rotate(0deg);
+//     }
+//     to {
+//       -webkit-transform: rotate(180deg);
+//     }
+//   }
+//   /* Rotate the left side of the progress bar from 0 to 360 degrees */
+//   @-webkit-keyframes left-spin {
+//     from {
+//       -webkit-transform: rotate(0deg);
+//     }
+//     to {
+//       -webkit-transform: rotate(360deg);
+//     }
+//   }
+//   /* Set the wrapper clip to auto, effectively removing the clip */
+//   @-webkit-keyframes close-wrapper {
+//     to {
+//       clip: rect(auto, auto, auto, auto);
+//     }
+//   }
+
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+
+  /* ===================================================== */

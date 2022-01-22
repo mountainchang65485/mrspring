@@ -1,0 +1,779 @@
+body {
+  position: relative;
+  -webkit-tap-highlight-color: transparent; }
+
+@media screen and (min-width: 769px) {
+  body {
+    overflow: hidden; } }
+
+#scrCustom {
+  display: block;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  background-image: url("../images/backGroundPaperDoor.png"); }
+  #scrCustom .switchBar {
+    width: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    background-color: #b68a8a; }
+    #scrCustom .switchBar span {
+      width: 50%;
+      color: #8b4545;
+      text-align: center;
+      padding: 6px 2px; }
+    #scrCustom .switchBar .scr_now {
+      color: #fff;
+      background-color: #582b07; }
+  #scrCustom #customWrapper {
+    width: 100%;
+    max-width: 480px;
+    background-image: url("../images/backGround.jpg");
+    height: 100%;
+    margin: auto;
+    padding: 80px 6px 60px; }
+    #scrCustom #customWrapper #items_info_wrapper {
+      border: 2px solid #888;
+      display: block;
+      background-color: #fff;
+      border-radius: 30px;
+      box-sizing: border-box;
+      width: 95%;
+      max-width: 400px;
+      margin: auto;
+      padding: 20px; }
+      #scrCustom #customWrapper #items_info_wrapper #radar_title {
+        font-size: 18px;
+        text-align: center;
+        margin: auto; }
+      #scrCustom #customWrapper #items_info_wrapper #radar_wrapper {
+        margin: auto;
+        width: 300px;
+        height: 280px; }
+      #scrCustom #customWrapper #items_info_wrapper #total_price, #scrCustom #customWrapper #items_info_wrapper #total_amount {
+        color: #a33131; }
+    #scrCustom #customWrapper #btn_wrapper_forflex {
+      display: none; }
+    #scrCustom #customWrapper #items_input {
+      padding: 6px;
+      width: 100%;
+      max-width: 400px;
+      margin: auto; }
+      #scrCustom #customWrapper #items_input input {
+        display: none; }
+      #scrCustom #customWrapper #items_input input:checked + label .item_price_span {
+        opacity: 1;
+        left: 10px; }
+      #scrCustom #customWrapper #items_input input:hover + label .item_price_span {
+        opacity: 1;
+        left: 10px; }
+      #scrCustom #customWrapper #items_input h3 {
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 18px;
+        margin: 20px 0 10px; }
+      #scrCustom #customWrapper #items_input .items_normal, #scrCustom #customWrapper #items_input .items_time {
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
+        margin: auto; }
+        #scrCustom #customWrapper #items_input .items_normal label, #scrCustom #customWrapper #items_input .items_time label {
+          width: 33.3333%;
+          padding: 10px;
+          display: block;
+          position: relative; }
+          #scrCustom #customWrapper #items_input .items_normal label img, #scrCustom #customWrapper #items_input .items_time label img {
+            width: 100%;
+            border-radius: 50%;
+            transition: .5s;
+            box-shadow: -2px 2px 4px 1px rgba(30, 30, 30, 0.3);
+            min-width: 50px; }
+          #scrCustom #customWrapper #items_input .items_normal label p, #scrCustom #customWrapper #items_input .items_time label p {
+            line-height: 1;
+            text-align: center; }
+          #scrCustom #customWrapper #items_input .items_normal label .item_price_span, #scrCustom #customWrapper #items_input .items_time label .item_price_span {
+            width: 30%;
+            min-width: 48px;
+            position: absolute;
+            top: 10px;
+            left: -20px;
+            display: block;
+            margin: auto;
+            text-align: center;
+            color: #eee;
+            background-color: rgba(66, 66, 66, 0.6);
+            transition: .5s;
+            padding: 0 2px;
+            opacity: 0; }
+          #scrCustom #customWrapper #items_input .items_normal label .item_time_tag, #scrCustom #customWrapper #items_input .items_time label .item_time_tag {
+            position: absolute;
+            top: 7%;
+            right: 7%;
+            background-color: #fff;
+            border: 2px solid;
+            border-radius: 50%;
+            line-height: 1;
+            padding: 4px;
+            font-size: 15px; }
+          #scrCustom #customWrapper #items_input .items_normal label .time_1, #scrCustom #customWrapper #items_input .items_time label .time_1 {
+            border-color: #b24f59; }
+          #scrCustom #customWrapper #items_input .items_normal label .time_2, #scrCustom #customWrapper #items_input .items_time label .time_2 {
+            border-color: #dd7d1d; }
+          #scrCustom #customWrapper #items_input .items_normal label .time_3, #scrCustom #customWrapper #items_input .items_time label .time_3 {
+            border-color: #6a912d; }
+      #scrCustom #customWrapper #items_input .items_normal label {
+        width: 100%; }
+      #scrCustom #customWrapper #items_input .items_normal p {
+        margin-top: 4px; }
+      #scrCustom #customWrapper #items_input .items_normal .slick-dots {
+        bottom: -15px; }
+      #scrCustom #customWrapper #items_input input:checked + label img {
+        box-shadow: 0 0 8px 7px #fff;
+        transition: .5s; }
+  #scrCustom #bottomWave {
+    display: none; }
+
+#btnSubmitItems_formobile {
+  display: block;
+  margin: 40px auto 0px;
+  font-size: 15px;
+  text-align: center;
+  padding: 10px 14px;
+  width: 100px;
+  border-radius: 30px;
+  background-color: #582b07;
+  color: #fff;
+  position: relative;
+  cursor: pointer; }
+
+#btnShowWiki {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: -70px;
+  top: calc(50vh - 70px);
+  z-index: 2;
+  width: 140px;
+  height: 140px;
+  border: none;
+  border-radius: 50%;
+  background-color: #582b07;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer; }
+  #btnShowWiki #btnSpace {
+    width: 35%; }
+  #btnShowWiki #btnRightTri {
+    position: relative;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 14px 0 14px 12px;
+    border-color: transparent transparent transparent #ffffff; }
+  #btnShowWiki span {
+    font-size: 18px;
+    margin: 0 15px;
+    writing-mode: vertical-lr; }
+
+#btnShowWiki:hover #btnRightTri {
+  animation: tri_right 0.5s infinite; }
+
+#btnCloseWiki:hover #btnLeftTri {
+  animation: tri_left 0.5s infinite; }
+
+@keyframes tri_right {
+  0% {
+    left: 0px; }
+  100% {
+    left: 6px; } }
+
+@keyframes tri_left {
+  0% {
+    right: 0px; }
+  100% {
+    right: 6px; } }
+
+#scrWiki {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-image: url("../images/backGroundPaperDoor.png"); }
+  #scrWiki #btnCloseWiki {
+    display: none; }
+  #scrWiki #wikiWrapper {
+    width: 100%;
+    max-width: 480px;
+    margin: auto;
+    background-image: url(../images/backGround.jpg);
+    padding: 80px 6px 60px; }
+  #scrWiki .switchBar {
+    width: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    background-color: #b68a8a; }
+    #scrWiki .switchBar span {
+      width: 50%;
+      color: #8b4545;
+      text-align: center;
+      padding: 6px 2px; }
+    #scrWiki .switchBar .scr_now {
+      background-color: #582b07;
+      color: #fff; }
+  #scrWiki #wikiInfo {
+    margin: 20px auto;
+    padding: 0 20px; }
+    #scrWiki #wikiInfo div {
+      display: flex;
+      margin: auto; }
+      #scrWiki #wikiInfo div h3 {
+        font-family: 'Noto Sans TC', sans-serif;
+        text-align: center; }
+      #scrWiki #wikiInfo div p {
+        margin: 16px auto;
+        font-weight: normal;
+        text-align: left; }
+      #scrWiki #wikiInfo div img {
+        display: block;
+        margin: auto;
+        width: 60%;
+        max-height: 300px;
+        filter: drop-shadow(0px 0px 3px #333); }
+  #scrWiki #wikiNav {
+    width: 90%;
+    margin: 20px auto; }
+    #scrWiki #wikiNav div {
+      text-align: center; }
+      #scrWiki #wikiNav div img {
+        display: inline-block;
+        margin: auto;
+        width: 85%; }
+      #scrWiki #wikiNav div span {
+        display: block; }
+      #scrWiki #wikiNav div .forActive {
+        display: none; }
+    #scrWiki #wikiNav .slick-list .draggable {
+      overflow: hidden; }
+    #scrWiki #wikiNav li {
+      margin: 0; }
+    #scrWiki #wikiNav .slick-slide {
+      opacity: .3; }
+    #scrWiki #wikiNav .slick-current {
+      opacity: 1; }
+
+#scrCardLightbox {
+  display: none;
+  width: 100%;
+  background-color: rgba(66, 66, 66, 0.6);
+  position: relative;
+  z-index: 105;
+  padding: 40px 10px; }
+  #scrCardLightbox #lightboxContent {
+    border-radius: 10px;
+    background-image: url(../images/backGround.jpg);
+    margin: auto;
+    padding: 16px 6px;
+    width: 95%;
+    position: relative; }
+    #scrCardLightbox #lightboxContent #lightboxToggle {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: -18.5px;
+      right: -18.5px;
+      border-radius: 50%;
+      background-color: #e19d43;
+      border: 3px solid #fee; }
+    #scrCardLightbox #lightboxContent #lightboxToggle::before {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 6px;
+      border-radius: 6px;
+      background-color: #864d04;
+      transform: rotate(45deg);
+      position: absolute;
+      top: 15px;
+      left: 2px; }
+    #scrCardLightbox #lightboxContent #lightboxToggle::after {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 6px;
+      border-radius: 6px;
+      background-color: #864d04;
+      transform: rotate(-45deg);
+      position: absolute;
+      top: 15px;
+      left: 2px; }
+    #scrCardLightbox #lightboxContent h3 {
+      text-align: center; }
+    #scrCardLightbox #lightboxContent #dashboard #options {
+      margin: 10px auto 16px;
+      display: flex;
+      justify-content: space-around;
+      position: relative;
+      z-index: 999; }
+      #scrCardLightbox #lightboxContent #dashboard #options .inputSet .cardInputWrapper {
+        display: none;
+        position: absolute;
+        border-radius: 10px;
+        width: 90%;
+        top: 50px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        background-color: #ff9532;
+        padding: 20px 10px; }
+        #scrCardLightbox #lightboxContent #dashboard #options .inputSet .cardInputWrapper input[type*="text"] {
+          width: 80%;
+          padding: 4px;
+          font-size: 16px;
+          border: 0 none transparent; }
+        #scrCardLightbox #lightboxContent #dashboard #options .inputSet .cardInputWrapper select {
+          width: 80%;
+          padding: 3px 4px;
+          font-size: 16px;
+          border: 0 none transparent; }
+      #scrCardLightbox #lightboxContent #dashboard #options .option {
+        color: #fff;
+        font-weight: 300;
+        padding: 4px;
+        background-color: #444;
+        position: relative; }
+        #scrCardLightbox #lightboxContent #dashboard #options .option span {
+          display: none;
+          position: absolute;
+          top: 35px;
+          left: 19px;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 0 16px 30px 16px;
+          border-color: transparent transparent #ff9532 transparent; }
+      #scrCardLightbox #lightboxContent #dashboard #options .colorInputSet .cardInputWrapper {
+        display: none;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        text-align: center; }
+        #scrCardLightbox #lightboxContent #dashboard #options .colorInputSet .cardInputWrapper .colourpicker {
+          width: 30%;
+          margin: 6px auto; }
+        #scrCardLightbox #lightboxContent #dashboard #options .colorInputSet .cardInputWrapper input[type="colour"] {
+          width: 100%; }
+        #scrCardLightbox #lightboxContent #dashboard #options .colorInputSet .cardInputWrapper input[title="Alpha"] {
+          display: none; }
+        #scrCardLightbox #lightboxContent #dashboard #options .colorInputSet .cardInputWrapper .colourpicker_swatch {
+          padding: 0;
+          width: 100%; }
+    #scrCardLightbox #lightboxContent .card {
+      position: relative;
+      margin: 80px auto 0;
+      z-index: 998; }
+      #scrCardLightbox #lightboxContent .card .card_name {
+        font-size: 18px; }
+      #scrCardLightbox #lightboxContent .card .draw {
+        margin: auto;
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        #scrCardLightbox #lightboxContent .card .draw .drawingArea {
+          transform: scale(0.55);
+          width: 0;
+          height: 0;
+          position: relative;
+          text-align: center;
+          vertical-align: baseline; }
+        #scrCardLightbox #lightboxContent .card .draw .circle1, #scrCardLightbox #lightboxContent .card .draw .circle2, #scrCardLightbox #lightboxContent .card .draw .circle3, #scrCardLightbox #lightboxContent .card .draw .circle4, #scrCardLightbox #lightboxContent .card .draw .circle5, #scrCardLightbox #lightboxContent .card .draw .circle0 {
+          position: relative;
+          /* letter-spacing: 0.1em; */ }
+        #scrCardLightbox #lightboxContent .card .draw .circle p {
+          font-weight: bold;
+          position: absolute;
+          display: block;
+          width: 25px;
+          margin: 0;
+          font-size: 60px;
+          font-family: 'Times New Roman';
+          vertical-align: top; }
+      #scrCardLightbox #lightboxContent .card .card_item {
+        display: none; }
+    #scrCardLightbox #lightboxContent #btnSubmitCard {
+      display: block;
+      margin: 25px auto 5px;
+      font-size: 15px;
+      text-align: center;
+      padding: 10px 14px;
+      width: 100px;
+      border-radius: 30px;
+      background-color: #582b07;
+      color: #d8ac34;
+      position: relative;
+      cursor: pointer;
+      transition: .3s; }
+    #scrCardLightbox #lightboxContent #btnSubmitCard:hover {
+      color: #fff;
+      transition: .3s; }
+
+#mrSpringStand {
+  display: none; }
+
+#scrSubmitLightbox {
+  display: none;
+  width: 100%;
+  background-color: rgba(66, 66, 66, 0.6);
+  position: relative;
+  z-index: 6;
+  padding: 20vh 10px; }
+  #scrSubmitLightbox #submitLightboxContent {
+    background-image: url(../images/makingCardBackground2.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    margin: auto;
+    padding: 36px 6px;
+    width: 90%;
+    position: relative;
+    text-align: center; }
+    #scrSubmitLightbox #submitLightboxContent h3 {
+      margin: 0 auto 30px;
+      font-family: 'Noto Sans TC', sans-serif;
+      text-align: center; }
+    #scrSubmitLightbox #submitLightboxContent .far {
+      display: none; }
+    #scrSubmitLightbox #submitLightboxContent .lightboxLinks {
+      display: block;
+      margin: 5px auto 10px;
+      font-size: 15px;
+      text-align: center;
+      padding: 10px 14px;
+      width: 100px;
+      border-radius: 30px;
+      background-color: #582b07;
+      color: #fff;
+      position: relative;
+      cursor: pointer; }
+
+@media screen and (min-width: 769px) {
+  #scrCustom {
+    height: 100vh;
+    position: relative; }
+    #scrCustom #customWrapper {
+      padding: 100px 30px;
+      width: 80%;
+      max-width: 1200px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      height: 100%;
+      z-index: 3; }
+      #scrCustom #customWrapper #items_input {
+        order: 0;
+        width: 35%;
+        margin: 0;
+        padding: 0;
+        z-index: 2; }
+        #scrCustom #customWrapper #items_input .items_normal div {
+          width: 33.3333%; }
+        #scrCustom #customWrapper #items_input h3 {
+          margin: 0;
+          font-size: 20px;
+          margin-bottom: 12px; }
+        #scrCustom #customWrapper #items_input .items_time {
+          margin-bottom: 20px; }
+        #scrCustom #customWrapper #items_input label:hover img {
+          box-shadow: 0 0 8px 7px #fff;
+          transition: .5s;
+          cursor: pointer; }
+      #scrCustom #customWrapper #items_info_wrapper_forflex {
+        order: 1;
+        width: 30%;
+        min-width: 400px;
+        padding: 0px;
+        z-index: 2; }
+        #scrCustom #customWrapper #items_info_wrapper_forflex #items_info_wrapper {
+          margin: auto; }
+        #scrCustom #customWrapper #items_info_wrapper_forflex #btn_wrapper_forflex {
+          display: block;
+          order: 2;
+          margin: auto;
+          display: flex; }
+          #scrCustom #customWrapper #items_info_wrapper_forflex #btn_wrapper_forflex #btnSubmitItems {
+            margin: 40px auto 0px;
+            font-size: 15px;
+            text-align: center;
+            padding: 10px 54px;
+            border-radius: 100px;
+            background-color: #582b07;
+            color: #d8ac34;
+            position: relative;
+            cursor: pointer;
+            transition: .3s; }
+          #scrCustom #customWrapper #items_info_wrapper_forflex #btn_wrapper_forflex #btnSubmitItems:hover {
+            color: #fff;
+            transition: .3s; }
+    #scrCustom .switchBar {
+      display: none; }
+    #scrCustom #bottomWave {
+      display: block;
+      position: absolute;
+      bottom: 58px;
+      height: 0px;
+      width: 100vw;
+      z-index: 1;
+      transition: .5s;
+      opacity: 0; }
+      #scrCustom #bottomWave #mrSpringBath {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        animation: mrSpringBathSink infinite 2s alternate;
+        transition-delay: 2s; }
+  @keyframes mrSpringBathSink {
+    0% {
+      top: -120px; }
+    100% {
+      top: -140px; } }
+    #scrCustom #mrSpringStand {
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 50px;
+      width: 30%;
+      max-width: 400px;
+      margin: auto;
+      opacity: 1;
+      transition: .5s;
+      animation: mrSpringRotation .5s alternate infinite linear; }
+  @keyframes mrSpringRotation {
+    0% {
+      transform: rotate(1deg); }
+    100% {
+      transform: rotate(-1deg); } }
+    #scrCustom .all_rights {
+      position: absolute;
+      bottom: 0;
+      z-index: 2; }
+  #btnShowWiki {
+    display: flex; }
+  #scrWiki {
+    position: absolute;
+    top: 0;
+    left: -100vw;
+    transition: 1s;
+    z-index: 202;
+    height: 100vh;
+    background-image: none;
+    display: flex; }
+    #scrWiki #btnCloseWiki {
+      display: flex;
+      flex-direction: row-reverse;
+      position: absolute;
+      left: calc(50vw - 360px - 70px);
+      top: 0;
+      bottom: 0;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: calc(50vh - 70px);
+      width: 140px;
+      height: 140px;
+      border: none;
+      border-radius: 50%;
+      background-color: #582b07;
+      box-sizing: border-box;
+      color: #fff;
+      cursor: pointer; }
+      #scrWiki #btnCloseWiki #btnLeftTri {
+        position: relative;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 14px 12px 14px 0;
+        border-color: transparent #ffffff transparent transparent; }
+      #scrWiki #btnCloseWiki span {
+        font-size: 18px;
+        margin: 0 15px;
+        writing-mode: vertical-lr; }
+      #scrWiki #btnCloseWiki #btnSpace2 {
+        width: 35%; }
+    #scrWiki .all_rights {
+      display: none; }
+    #scrWiki #wikiWrapper {
+      width: 720px;
+      max-width: none;
+      height: 720px;
+      padding: 0; }
+      #scrWiki #wikiWrapper .switchBar {
+        display: none; }
+      #scrWiki #wikiWrapper #wikiInfo .CirItem {
+        display: block; }
+      #scrWiki #wikiWrapper #wikiNav {
+        width: 100%;
+        margin: 0; }
+        #scrWiki #wikiWrapper #wikiNav img {
+          width: 100%; }
+  #scrCardLightbox {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 103;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center; }
+    #scrCardLightbox #lightboxContent {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap; }
+      #scrCardLightbox #lightboxContent h3 {
+        width: 100%; }
+      #scrCardLightbox #lightboxContent #dashboard {
+        width: 60%;
+        margin-left: 3%;
+        display: block; }
+        #scrCardLightbox #lightboxContent #dashboard #options {
+          display: block;
+          display: flex;
+          flex-direction: column; }
+          #scrCardLightbox #lightboxContent #dashboard #options .inputSet {
+            display: flex;
+            margin: 20px; }
+            #scrCardLightbox #lightboxContent #dashboard #options .inputSet .option {
+              width: 15%;
+              text-align: center;
+              height: 32px;
+              margin: 0;
+              min-width: 80px; }
+            #scrCardLightbox #lightboxContent #dashboard #options .inputSet .option span {
+              display: none; }
+            #scrCardLightbox #lightboxContent #dashboard #options .inputSet .cardInputWrapper {
+              position: relative;
+              top: auto;
+              display: block;
+              background-color: transparent;
+              margin: 0;
+              padding: 0;
+              width: 85%; }
+          #scrCardLightbox #lightboxContent #dashboard #options .colorInputSet {
+            height: 110px; }
+            #scrCardLightbox #lightboxContent #dashboard #options .colorInputSet .cardInputWrapper {
+              width: 80%;
+              margin-top: -6px;
+              text-align: left;
+              padding: 0;
+              padding-left: 1%; }
+              #scrCardLightbox #lightboxContent #dashboard #options .colorInputSet .cardInputWrapper .colourpicker {
+                width: 27%;
+                margin-bottom: 20px; }
+              #scrCardLightbox #lightboxContent #dashboard #options .colorInputSet .cardInputWrapper .colourpicker_input {
+                height: 32px;
+                display: none; }
+      #scrCardLightbox #lightboxContent .card {
+        max-width: 224px;
+        text-align: center; }
+      #scrCardLightbox #lightboxContent #btnSubmitCardWrapper {
+        width: 100%;
+        margin-top: 30px; }
+        #scrCardLightbox #lightboxContent #btnSubmitCardWrapper #btnSubmitCard {
+          height: 50px;
+          margin: auto;
+          width: 120px; }
+  #btn_wrapper_formobile {
+    display: none; }
+  #scrSubmitLightbox {
+    display: none;
+    position: fixed;
+    z-index: 202;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw; }
+    #scrSubmitLightbox #submitLightboxContent {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      width: 30%;
+      min-width: 520px;
+      padding: 40px 20px 60px; }
+      #scrSubmitLightbox #submitLightboxContent h3 {
+        width: 100%;
+        margin-bottom: 48px; }
+      #scrSubmitLightbox #submitLightboxContent .submitLightboxLinkSet {
+        width: 33.333%;
+        text-align: center; }
+        #scrSubmitLightbox #submitLightboxContent .submitLightboxLinkSet .far {
+          font-size: 60px;
+          display: inline; }
+        #scrSubmitLightbox #submitLightboxContent .submitLightboxLinkSet p {
+          margin-top: 8px; } }
+
+#mask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(66, 66, 66, 0.6);
+  top: 0;
+  left: 0;
+  z-index: 201;
+  display: none;
+  transition: 1s; }
+
+#alertLightbox {
+  position: fixed;
+  top: calc(50vh - 80px);
+  left: calc(50vw - 150px);
+  width: 300px;
+  height: 160px;
+  z-index: 202;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/makingCardBackground.png);
+  background-size: 100% 100%; }
+  #alertLightbox #alertLightboxToggle {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -18.5px;
+    right: -18.5px;
+    border-radius: 50%;
+    background-color: #e19d43;
+    border: 3px solid #fee; }
+  #alertLightbox #alertLightboxToggle:hover {
+    cursor: pointer; }
+  #alertLightbox #alertLightboxToggle::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 6px;
+    border-radius: 6px;
+    background-color: #864d04;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 15px;
+    left: 2px; }
+  #alertLightbox #alertLightboxToggle::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 6px;
+    border-radius: 6px;
+    background-color: #864d04;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 15px;
+    left: 2px; }
+  #alertLightbox span {
+    font-size: 21px; }
